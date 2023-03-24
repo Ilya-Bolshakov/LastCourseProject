@@ -17,9 +17,8 @@ namespace CourseProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             FormsApplicationContext context = new FormsApplicationContext();
-            Application.Run(context);
+            AppProperties.Run(context);
         }
     }
 }

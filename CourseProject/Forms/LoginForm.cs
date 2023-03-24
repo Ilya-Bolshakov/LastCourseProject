@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CourseProject.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : BaseForm
     {
         public LoginForm()
         {
@@ -19,9 +19,11 @@ namespace CourseProject.Forms
 
         private void labelRegister_Click(object sender, EventArgs e)
         {
+            this.CloseApp = false;
+            this.Close();
             var regform = new RegisterForm();
             regform.Show();
-            this.Close();
+            
         }
     }
 }

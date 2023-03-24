@@ -10,7 +10,6 @@ namespace CourseProject
 {
     public class FormsApplicationContext : ApplicationContext
     {
-        public bool CloseApplication { get; set; }
         public FormsApplicationContext()
         {
             var loginForm = new LoginForm();
