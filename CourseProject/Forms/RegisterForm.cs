@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace CourseProject.Forms
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : BaseForm
     {
         public RegisterForm()
         {
             InitializeComponent();
+        }
+
+        private void labelEntry_Click(object sender, EventArgs e)
+        {
+            this.CloseApp = false;
+            this.Close();
+            var loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }
