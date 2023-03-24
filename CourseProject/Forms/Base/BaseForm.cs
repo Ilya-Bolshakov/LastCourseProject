@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseProject
+namespace CourseProject.Forms
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class BaseForm : Form
     {
-        public Form()
+        public BaseForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Controls.Add(new UserControl1());
         }
     }
 }

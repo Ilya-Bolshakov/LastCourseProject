@@ -1,6 +1,6 @@
 ﻿namespace CourseProject
 {
-    partial class Form
+    partial class AdminForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
