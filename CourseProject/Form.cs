@@ -16,5 +16,10 @@ namespace CourseProject
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Add(new UserControl1());
+        }
     }
 }
