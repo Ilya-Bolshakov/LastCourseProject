@@ -81,7 +81,7 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRegister.Location = new System.Drawing.Point(523, 506);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(356, 76);
             this.buttonRegister.TabIndex = 13;
@@ -94,7 +94,7 @@
             this.textBoxPassword.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPassword.Location = new System.Drawing.Point(677, 420);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(249, 26);
@@ -105,7 +105,7 @@
             this.textBoxLogin.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.Location = new System.Drawing.Point(676, 364);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(249, 26);
             this.textBoxLogin.TabIndex = 11;
@@ -148,7 +148,7 @@
             this.textBoxSurname.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxSurname.Location = new System.Drawing.Point(485, 155);
-            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(249, 26);
             this.textBoxSurname.TabIndex = 19;
@@ -158,7 +158,7 @@
             this.textBoxName.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.Location = new System.Drawing.Point(485, 99);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(249, 26);
             this.textBoxName.TabIndex = 18;
@@ -190,7 +190,7 @@
             this.textBoxPassport.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxPassport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPassport.Location = new System.Drawing.Point(485, 263);
-            this.textBoxPassport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassport.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassport.Name = "textBoxPassport";
             this.textBoxPassport.Size = new System.Drawing.Size(249, 26);
             this.textBoxPassport.TabIndex = 23;
@@ -200,7 +200,7 @@
             this.textBoxPatronymic.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxPatronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPatronymic.Location = new System.Drawing.Point(485, 197);
-            this.textBoxPatronymic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPatronymic.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPatronymic.Name = "textBoxPatronymic";
             this.textBoxPatronymic.Size = new System.Drawing.Size(249, 26);
             this.textBoxPatronymic.TabIndex = 22;
@@ -229,7 +229,7 @@
             // 
             // dateTimePickerDateOfBirth
             // 
-            this.dateTimePickerDateOfBirth.Location = new System.Drawing.Point(1054, 99);
+            this.dateTimePickerDateOfBirth.Location = new System.Drawing.Point(1070, 99);
             this.dateTimePickerDateOfBirth.Name = "dateTimePickerDateOfBirth";
             this.dateTimePickerDateOfBirth.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerDateOfBirth.TabIndex = 24;
@@ -260,7 +260,7 @@
             // 
             this.textBoxPhone.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(1054, 144);
+            this.textBoxPhone.Location = new System.Drawing.Point(1070, 144);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(249, 26);
@@ -315,7 +315,7 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.labelReg);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "RegisterForm";
             this.Text = "Регистрация";
             this.ResumeLayout(false);
