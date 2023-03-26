@@ -1,6 +1,7 @@
 ﻿using CourseProject.DAL;
 using CourseProject.Enums;
 using CourseProject.Guards;
+using CourseProject.Helpers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,7 +25,6 @@ namespace CourseProject.Forms
 
         private async void buttonRegister_Click(object sender, EventArgs e)
         {
-            var db = new EcoparkDbContext();
             var newUser = new Users();
             newUser.FirstName = textBoxName.Text;
             newUser.LastName = textBoxPatronymic.Text;
@@ -39,10 +39,20 @@ namespace CourseProject.Forms
 
             newUser.Gender = (int)d;
             newUser.userLogin = textBoxLogin.Text;
-            newUser.userPassword = PBKDF2HashHelper.CreatePasswordHash(textBoxPassword.Text);
 
-            db.Users.Add(newUser);
-            await db.SaveChangesAsync();
+            try
+            {
+                await AccountHelper.Register(newUser, textBoxPassword.Text);
+                this.CloseApp = false;
+                this.Close();
+                var loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+            
         }
     }
 }

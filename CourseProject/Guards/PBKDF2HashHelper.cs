@@ -3,12 +3,17 @@ using System.Security.Cryptography;
 
 namespace CourseProject.Guards
 {
-    internal class PBKDF2HashHelper
+    internal class PBKDF2HashHelper : IHashable
     {
         private const int SALT_LENGTH = 24;
         private const int DERIVED_KEY_LENGTH = 24;
 
-        public static string CreatePasswordHash(string password, int iterationCount = 15013)
+        public string Hash(string password)
+        {
+            return CreatePasswordHash(password);
+        }
+
+        public string CreatePasswordHash(string password, int iterationCount = 15013)
         {
             if (password == null) throw new ArgumentNullException(nameof(password));
 
@@ -22,7 +27,7 @@ namespace CourseProject.Guards
             return Convert.ToBase64String(valueToSave);
         }
 
-        private static byte[] GenerateRandomSalt(int saltLength)
+        private byte[] GenerateRandomSalt(int saltLength)
         {
             using (var csprng = new RNGCryptoServiceProvider())
             {
@@ -32,7 +37,7 @@ namespace CourseProject.Guards
             }
         }
 
-        private static byte[] GenerateHashValue(string password, byte[] salt, int iterationCount)
+        private byte[] GenerateHashValue(string password, byte[] salt, int iterationCount)
         {
             using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterationCount))
             {
@@ -40,7 +45,7 @@ namespace CourseProject.Guards
             }
         }
 
-        public static bool VerifyPassword(string passwordGuess, string passwordHash)
+        public bool VerifyPassword(string passwordGuess, string passwordHash)
         {
             //ingredient #1: password salt byte array
             var salt = new byte[SALT_LENGTH];
@@ -61,7 +66,7 @@ namespace CourseProject.Guards
             return ConstantTimeComparison(passwordGuessByteArr, actualPasswordByteArr);
         }
 
-        private static bool ConstantTimeComparison(byte[] passwordGuess, byte[] actualPassword)
+        private bool ConstantTimeComparison(byte[] passwordGuess, byte[] actualPassword)
         {
             uint difference = (uint)passwordGuess.Length ^ (uint)actualPassword.Length;
             for (var i = 0; i < passwordGuess.Length && i < actualPassword.Length; i++)

@@ -1,4 +1,5 @@
 ﻿using CourseProject.DAL;
+using CourseProject.Forms.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +12,11 @@ using System.Windows.Forms;
 
 namespace CourseProject.Forms
 {
-    public partial class BaseForm : Form
+    public partial class UserForm : BaseUserForm
     {
-        public bool CloseApp { get; set; }
-        
-        public BaseForm()
+        public UserForm(Users user) : base(user)
         {
             InitializeComponent();
-            CloseApp = true;
-        }
-
-        private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (CloseApp)
-            {
-                AppProperties.Close();
-            }
         }
     }
 }

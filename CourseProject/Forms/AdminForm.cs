@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CourseProject.DAL;
+using CourseProject.Forms.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseProject
+namespace CourseProject.Forms
 {
-    public partial class AdminForm : System.Windows.Forms.Form
+    public partial class AdminForm : BaseUserForm
     {
-        public AdminForm()
+        public AdminForm(Users user) : base(user)
         {
             InitializeComponent();
         }

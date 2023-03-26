@@ -1,4 +1,4 @@
-﻿namespace CourseProject
+﻿namespace CourseProject.Forms
 {
     partial class AdminForm
     {

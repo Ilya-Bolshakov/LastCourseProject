@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseProject.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,30 @@ namespace CourseProject.Forms
             var regform = new RegisterForm();
             regform.Show();
             
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            var user = AccountHelper.Login(textBoxLogin.Text, textBoxPassword.Text);
+            if (user != null)
+            {
+                try
+                {
+                    var form = new FormsCreator().GetInstance(user);
+                    this.CloseApp = false;
+                    this.Close();
+
+                    form.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неправильный логин или пароль");
+            }
         }
     }
 }
