@@ -1,4 +1,5 @@
 ﻿using CourseProject.DAL;
+using CourseProject.DTO;
 using CourseProject.Enums;
 using CourseProject.Guards;
 using System;
@@ -49,6 +50,30 @@ namespace CourseProject.Helpers
                 throw new Exception("При попытке регистрации произошла ошибка!");
             }
            
+        }
+
+        public async static Task<bool> RegisterEmployee(Users newUser, string password, EmployeeDto employeeDto)
+        {
+            IHashable hasher = new SecurePasswordHasher();
+            newUser.userPassword = hasher.Hash(password);
+            Employee employee = new Employee();
+            employee.ResidentialAddress = employeeDto.Address;
+            employee.EmploymentDate = employeeDto.Employment;
+            newUser.Employee = employee;
+
+            try
+            {
+                var db = new EcoparkDbContext();
+                employee.Work1 = db.Work.FirstOrDefault(w => w.Id == employeeDto.Work.Id);
+                db.Users.Add(newUser);
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("При попытке регистрации произошла ошибка!");
+            }
+
         }
     }
 }

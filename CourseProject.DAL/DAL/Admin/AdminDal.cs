@@ -19,11 +19,11 @@ namespace CourseProject.DAL.DAL.Admin
             return _context.Employee.Where(u => u.Users.UserRole >= 0).AsEnumerable();
         }
 
-        public async Task<Users> AddUser(Users user)
+        public async Task<Employee> AddEmployee(Employee employee)
         {
-            _context.Users.Add(user);
+            _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
-            return user;
+            return employee;
         }
     }
 }

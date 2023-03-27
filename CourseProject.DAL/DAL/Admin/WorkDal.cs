@@ -15,7 +15,7 @@ namespace CourseProject.DAL.DAL.Admin
         }
         public IEnumerable<Work> GetWorks()
         {
-            return _context.Work;
+            return _context.Work.AsEnumerable();
         }
     }
 }

@@ -1,14 +1,10 @@
 ﻿using CourseProject.DAL;
 using CourseProject.DAL.DAL.Admin;
 using CourseProject.DTO;
+using CourseProject.Enums;
+using CourseProject.Helpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseProject.Forms.Admin
@@ -20,7 +16,9 @@ namespace CourseProject.Forms.Admin
         {
             InitializeComponent();
             DialogResult = DialogResult.No;
-            BindingData();
+            Employee = new EmployeeDto();
+            Employee.DateOfBirth = DateTime.Now;
+            Employee.Employment = DateTime.Now;
         }
 
         public AddEmployee(EmployeeDto dto)
@@ -35,14 +33,16 @@ namespace CourseProject.Forms.Admin
 
         public void BindingData()
         {
-            textBoxAddress.Text = Employee?.Address;
-            textBoxName.Text = Employee?.Name;
-            textBoxPassport.Text = Employee?.Passport;
-            textBoxPatronymic.Text = Employee?.Patronymic;
-            textBoxPhone.Text = Employee?.Phone;
-            textBoxSurname.Text = Employee?.LastName;
-            dateTimePickerDateOfBirth.Value = Employee != null ? Employee.DateOfBirth : DateTime.Now;
-            dateTimePickerEmplument.Value = Employee != null ? Employee.Employment : DateTime.Now;
+            textBoxAddress.Text = Employee.Address;
+            textBoxName.Text = Employee.Name;
+            textBoxPassport.Text = Employee.Passport;
+            textBoxPatronymic.Text = Employee.Patronymic;
+            textBoxPhone.Text = Employee.Phone;
+            textBoxSurname.Text = Employee.LastName;
+            dateTimePickerDateOfBirth.Value = Employee.DateOfBirth;
+            dateTimePickerEmplument.Value = Employee.Employment;
+            textBoxAddress.Text = Employee.Address;
+
 
             Controls.OfType<RadioButton>().ToList().ForEach(radio => radio.Checked = radio.Text.Equals(Employee?.Gender));
 
@@ -53,11 +53,47 @@ namespace CourseProject.Forms.Admin
             var db = new EcoparkDbContext();
             comboBoxwork.DataSource = new WorkDal(db).GetWorks().ToList();
             comboBoxwork.DisplayMember = "Work1";
-            comboBoxwork.ValueMember = "Id";
+            comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee.Work.Id);
+            db.Dispose();
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private async void buttonRegister_Click(object sender, EventArgs e)
         {
+            if (Employee.Id == 0)
+            {
+                var newUser = new Users();
+                newUser.FirstName = textBoxName.Text;
+                newUser.LastName = textBoxPatronymic.Text;
+                newUser.Patronymic = textBoxPatronymic.Text;
+                newUser.Passport = textBoxPassport.Text;
+                newUser.DateOfBirth = dateTimePickerDateOfBirth.Value;
+                newUser.Phone = textBoxPhone.Text;
+
+                var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+                GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
+
+                newUser.Gender = (int)d;
+                newUser.userLogin = textBoxLogin.Text;
+
+                try
+                {
+                    Employee.Work = (Work)comboBoxwork.SelectedItem;
+                    Employee.Employment = dateTimePickerEmplument.Value;
+                    Employee.Address = textBoxAddress.Text;
+                    newUser.UserRole = Employee.Work.Id;
+
+                    await AccountHelper.RegisterEmployee(newUser, textBoxPassword.Text, Employee);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка");
+                }
+            }
+            else
+            {
+
+            }
             
         }
     }

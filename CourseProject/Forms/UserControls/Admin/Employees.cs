@@ -29,6 +29,8 @@ namespace CourseProject.Forms.UserControls.Admin
             var adminDal = new AdminDal(db);
 
             AllEmployments = adminDal.GetEmployees().Select(u => new EmployeeDto(u)).ToList();
+
+            db.Dispose();
             Employments = new BindingList<EmployeeDto>(AllEmployments);
             listBoxEmployees.DataSource = Employments;
         }
@@ -44,6 +46,15 @@ namespace CourseProject.Forms.UserControls.Admin
             var addForm = new AddEmployee();
             if (addForm.ShowDialog() == DialogResult.OK)
             { 
+
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            var addForm = new AddEmployee((EmployeeDto)listBoxEmployees.SelectedItem);
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
 
             }
         }
