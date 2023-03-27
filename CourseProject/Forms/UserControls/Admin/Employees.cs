@@ -1,6 +1,7 @@
 ﻿using CourseProject.DAL;
 using CourseProject.DAL.DAL.Admin;
 using CourseProject.DTO;
+using CourseProject.Forms.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,8 @@ namespace CourseProject.Forms.UserControls.Admin
 {
     public partial class Employees : UserControl
     {
-        public BindingList<UserDto> Users { get; set; }
-        public IList<UserDto> AllUsers { get; set; }
+        public BindingList<EmployeeDto> Employments { get; set; }
+        public IList<EmployeeDto> AllEmployments { get; set; }
         public Employees()
         {
             InitializeComponent();
@@ -27,18 +28,24 @@ namespace CourseProject.Forms.UserControls.Admin
             var db = new EcoparkDbContext();
             var adminDal = new AdminDal(db);
 
-            AllUsers = adminDal.GetEmployees().Select(u => new UserDto(u)).ToList();
-
-            Users = new BindingList<UserDto>(AllUsers);
-
-            listBoxEmployees.DataSource = Users;
+            AllEmployments = adminDal.GetEmployees().Select(u => new EmployeeDto(u)).ToList();
+            Employments = new BindingList<EmployeeDto>(AllEmployments);
+            listBoxEmployees.DataSource = Employments;
         }
 
         private void textBoxFilterName_TextChanged(object sender, EventArgs e)
         {
-            
-            Users = new BindingList<UserDto>(AllUsers.Where(u => u.ToString().ToLower().Contains(textBoxFilterName.Text.ToLower())).ToList());
-            listBoxEmployees.DataSource = Users;
+            Employments = new BindingList<EmployeeDto>(AllEmployments.Where(u => u.ToString().ToLower().Contains(textBoxFilterName.Text.ToLower())).ToList());
+            listBoxEmployees.DataSource = Employments;
+        }
+
+        private void buttonAddEmployee_Click(object sender, EventArgs e)
+        {
+            var addForm = new AddEmployee();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            { 
+
+            }
         }
     }
 }

@@ -22,6 +22,8 @@ namespace CourseProject.DTO
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Phone { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
 
         public UserDto()
         {
@@ -41,6 +43,22 @@ namespace CourseProject.DTO
             Gender = ((GenderEnum)Enum.GetValues(typeof(GenderEnum)).GetValue(user.Gender)).ToString();
             RoleEnum g = new RoleEnum();
             Role = g.GetEnumValue(user.UserRole);
+        }
+
+        public Users MapToOrm()
+        {
+            var users = new Users();
+            users.FirstName = Name;
+            users.LastName = LastName;
+            users.Patronymic = Patronymic;
+            users.UserRole = RoleInt;
+            users.Phone = Phone;
+            users.DateOfBirth = DateOfBirth;
+            users.Gender = GenderInt;
+            users.Passport = Passport;
+            users.userLogin = Login;
+            users.userPassword = Password;
+            return users;
         }
 
         public override string ToString()

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\EmployeeDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Enums\RoleEnum.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -66,6 +67,12 @@
     <Compile Include="AppProperties.cs" />
     <Compile Include="Enums\GenderEnum.cs" />
     <Compile Include="FormsApplicationContext.cs" />
+    <Compile Include="Forms\Admin\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +129,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

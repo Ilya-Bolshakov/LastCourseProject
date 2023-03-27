@@ -14,9 +14,16 @@ namespace CourseProject.DAL.DAL.Admin
             _context = ecopark;
         }
 
-        public IEnumerable<Users> GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
-            return _context.Users.Where(u => u.UserRole >= 0).AsEnumerable();
+            return _context.Employee.Where(u => u.Users.UserRole >= 0).AsEnumerable();
+        }
+
+        public async Task<Users> AddUser(Users user)
+        {
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
     }
 }

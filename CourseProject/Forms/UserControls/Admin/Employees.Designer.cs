@@ -52,6 +52,7 @@
             this.buttonAddEmployee.TabIndex = 1;
             this.buttonAddEmployee.Text = "Добавить сотрудника";
             this.buttonAddEmployee.UseVisualStyleBackColor = true;
+            this.buttonAddEmployee.Click += new System.EventHandler(this.buttonAddEmployee_Click);
             // 
             // labelFilter
             // 
