@@ -9,19 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseProject.Forms.Base
+namespace CourseProject.Forms.UserControls.Admin
 {
-    public partial class BaseUserForm : BaseForm
+    public partial class Employees : UserControl
     {
-        private Users _user;
-        public BaseUserForm()
+        public Employees()
         {
             InitializeComponent();
         }
-        public BaseUserForm(Users user)
+
+        private void Employees_Load(object sender, EventArgs e)
         {
-            _user = user;
-            InitializeComponent();
+            var db = new EcoparkDbContext();
         }
     }
 }

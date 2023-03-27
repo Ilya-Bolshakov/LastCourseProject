@@ -14,6 +14,10 @@ namespace CourseProject.Forms
 {
     public partial class UserForm : BaseUserForm
     {
+        public UserForm()
+        {
+            InitializeComponent();
+        }
         public UserForm(Users user) : base(user)
         {
             InitializeComponent();

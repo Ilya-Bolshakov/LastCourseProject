@@ -28,36 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelNav = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonEmployees = new System.Windows.Forms.Button();
+            this.buttonShifts = new System.Windows.Forms.Button();
+            this.buttonServices = new System.Windows.Forms.Button();
+            this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelNav.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelNav
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flowLayoutPanelNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 435);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanelNav.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanelNav.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.flowLayoutPanelNav.Controls.Add(this.buttonEmployees);
+            this.flowLayoutPanelNav.Controls.Add(this.buttonShifts);
+            this.flowLayoutPanelNav.Controls.Add(this.buttonServices);
+            this.flowLayoutPanelNav.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelNav.Location = new System.Drawing.Point(3, 4);
+            this.flowLayoutPanelNav.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanelNav.Name = "flowLayoutPanelNav";
+            this.flowLayoutPanelNav.Size = new System.Drawing.Size(300, 535);
+            this.flowLayoutPanelNav.TabIndex = 0;
             // 
-            // Form
+            // buttonEmployees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.buttonEmployees.Location = new System.Drawing.Point(3, 3);
+            this.buttonEmployees.Name = "buttonEmployees";
+            this.buttonEmployees.Size = new System.Drawing.Size(297, 79);
+            this.buttonEmployees.TabIndex = 0;
+            this.buttonEmployees.Text = "Сотрудники";
+            this.buttonEmployees.UseVisualStyleBackColor = true;
+            this.buttonEmployees.Click += new System.EventHandler(this.buttonEmployees_Click);
+            // 
+            // buttonShifts
+            // 
+            this.buttonShifts.Location = new System.Drawing.Point(3, 88);
+            this.buttonShifts.Name = "buttonShifts";
+            this.buttonShifts.Size = new System.Drawing.Size(297, 62);
+            this.buttonShifts.TabIndex = 1;
+            this.buttonShifts.Text = "Смены";
+            this.buttonShifts.UseVisualStyleBackColor = true;
+            this.buttonShifts.Click += new System.EventHandler(this.buttonShifts_Click);
+            // 
+            // buttonServices
+            // 
+            this.buttonServices.Location = new System.Drawing.Point(3, 156);
+            this.buttonServices.Name = "buttonServices";
+            this.buttonServices.Size = new System.Drawing.Size(297, 91);
+            this.buttonServices.TabIndex = 2;
+            this.buttonServices.Text = "Услуги";
+            this.buttonServices.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelMain
+            // 
+            this.flowLayoutPanelMain.Location = new System.Drawing.Point(309, 4);
+            this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
+            this.flowLayoutPanelMain.Size = new System.Drawing.Size(756, 544);
+            this.flowLayoutPanelMain.TabIndex = 1;
+            // 
+            // AdminForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form";
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.flowLayoutPanelMain);
+            this.Controls.Add(this.flowLayoutPanelNav);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "AdminForm";
             this.Text = "Form";
+            this.flowLayoutPanelNav.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelNav;
+        private System.Windows.Forms.Button buttonEmployees;
+        private System.Windows.Forms.Button buttonShifts;
+        private System.Windows.Forms.Button buttonServices;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMain;
     }
 }
 
