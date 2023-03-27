@@ -23,15 +23,18 @@ namespace CourseProject.Forms.UserControls.Admin
             InitializeComponent();
         }
 
-        private void Employees_Load(object sender, EventArgs e)
+        private async void Employees_Load(object sender, EventArgs e)
         {
-            var db = new EcoparkDbContext();
-            var adminDal = new AdminDal(db);
+            var task = Task.Run(() =>
+            {
+                var db = new EcoparkDbContext();
+                var adminDal = new AdminDal(db);
 
-            AllEmployments = adminDal.GetEmployees().Select(u => new EmployeeDto(u)).ToList();
-
-            db.Dispose();
-            Employments = new BindingList<EmployeeDto>(AllEmployments);
+                AllEmployments = adminDal.GetEmployees().Select(u => new EmployeeDto(u)).ToList();
+                db.Dispose();
+                Employments = new BindingList<EmployeeDto>(AllEmployments);
+            });
+            await task;
             listBoxEmployees.DataSource = Employments;
         }
 

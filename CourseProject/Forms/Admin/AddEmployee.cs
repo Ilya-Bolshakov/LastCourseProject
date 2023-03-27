@@ -131,10 +131,7 @@ namespace CourseProject.Forms.Admin
                 {
                     MessageBox.Show(ex.Message, "Ошибка");
                 }
-                
-
             }
-            
         }
     }
 }
