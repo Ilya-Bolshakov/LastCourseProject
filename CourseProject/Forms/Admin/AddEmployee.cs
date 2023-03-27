@@ -28,6 +28,7 @@ namespace CourseProject.Forms.Admin
             Employee = dto;
             textBoxLogin.Visible = false;
             textBoxPassword.Visible = false;
+            buttonRegister.Text = "Редактировать";
             BindingData();
         }
 
@@ -53,7 +54,7 @@ namespace CourseProject.Forms.Admin
             var db = new EcoparkDbContext();
             comboBoxwork.DataSource = new WorkDal(db).GetWorks().ToList();
             comboBoxwork.DisplayMember = "Work1";
-            comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee.Work.Id);
+            comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee?.Work?.Id);
             db.Dispose();
         }
 
@@ -84,6 +85,9 @@ namespace CourseProject.Forms.Admin
                     newUser.UserRole = Employee.Work.Id;
 
                     await AccountHelper.RegisterEmployee(newUser, textBoxPassword.Text, Employee);
+
+                    this.DialogResult = DialogResult.OK;
+                    Close();
                 }
                 catch (Exception ex)
                 {
@@ -92,6 +96,42 @@ namespace CourseProject.Forms.Admin
             }
             else
             {
+                var db = new EcoparkDbContext();
+
+                var editE = new AdminDal(db).GetEmployee(Employee.Id);
+                var editU = db.Users.FirstOrDefault(u => u.Id == Employee.Id);
+
+                editE.EmploymentDate = dateTimePickerEmplument.Value;
+                editE.ResidentialAddress = textBoxAddress.Text;
+                Employee.Work = (Work)comboBoxwork.SelectedItem;
+                editE.Work = Employee.Work.Id;
+                editU.UserRole = Employee.Work.Id;
+
+                editU.FirstName = textBoxName.Text;
+                editU.LastName = textBoxSurname.Text;
+                editU.Passport = textBoxPassport.Text;
+                editU.Patronymic = textBoxPatronymic.Text;
+                editU.DateOfBirth = dateTimePickerDateOfBirth.Value;
+                editU.Phone = textBoxPhone.Text;
+                var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+                GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
+
+                editU.Gender = (int)d;
+
+
+                try
+                {
+                    await db.SaveChangesAsync();
+
+                    this.DialogResult = DialogResult.OK;
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка");
+                }
+                
 
             }
             

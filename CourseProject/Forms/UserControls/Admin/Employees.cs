@@ -45,8 +45,9 @@ namespace CourseProject.Forms.UserControls.Admin
         {
             var addForm = new AddEmployee();
             if (addForm.ShowDialog() == DialogResult.OK)
-            { 
-
+            {
+                Employees_Load(this, e);
+                textBoxFilterName_TextChanged(this, e);
             }
         }
 
@@ -55,7 +56,8 @@ namespace CourseProject.Forms.UserControls.Admin
             var addForm = new AddEmployee((EmployeeDto)listBoxEmployees.SelectedItem);
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-
+                Employees_Load(this, e);
+                textBoxFilterName_TextChanged(this, e);
             }
         }
     }
