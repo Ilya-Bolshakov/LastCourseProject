@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agreement.cs" />
+    <Compile Include="DAL\Admin\AdminDal.cs" />
     <Compile Include="EcoparkDbContext.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="House.cs" />
