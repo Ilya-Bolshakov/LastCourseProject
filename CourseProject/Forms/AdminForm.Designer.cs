@@ -82,6 +82,7 @@
             this.buttonServices.TabIndex = 2;
             this.buttonServices.Text = "Услуги";
             this.buttonServices.UseVisualStyleBackColor = true;
+            this.buttonServices.Click += new System.EventHandler(this.buttonServices_Click);
             // 
             // flowLayoutPanelMain
             // 

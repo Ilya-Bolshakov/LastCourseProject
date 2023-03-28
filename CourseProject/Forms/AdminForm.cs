@@ -41,5 +41,13 @@ namespace CourseProject.Forms
             shifts.Height = this.Height;
             SetNewMainControl(shifts);
         }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+            Services services = new Services();
+            services.Width = this.Width;
+            services.Height = this.Height;
+            SetNewMainControl(services);
+        }
     }
 }
