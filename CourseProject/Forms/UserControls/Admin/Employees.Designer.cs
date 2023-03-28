@@ -46,7 +46,7 @@
             // 
             // buttonAddEmployee
             // 
-            this.buttonAddEmployee.Location = new System.Drawing.Point(407, 359);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(424, 376);
             this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(105, 58);
@@ -77,7 +77,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(288, 359);
+            this.buttonEdit.Location = new System.Drawing.Point(284, 376);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(95, 58);
             this.buttonEdit.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.Controls.Add(this.listBoxEmployees);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employees";
-            this.Size = new System.Drawing.Size(567, 442);
+            this.Size = new System.Drawing.Size(607, 463);
             this.Load += new System.EventHandler(this.Employees_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

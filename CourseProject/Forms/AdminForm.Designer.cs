@@ -46,17 +46,17 @@
             this.flowLayoutPanelNav.Controls.Add(this.buttonShifts);
             this.flowLayoutPanelNav.Controls.Add(this.buttonServices);
             this.flowLayoutPanelNav.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelNav.Location = new System.Drawing.Point(3, 4);
-            this.flowLayoutPanelNav.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanelNav.Location = new System.Drawing.Point(2, 3);
             this.flowLayoutPanelNav.Name = "flowLayoutPanelNav";
-            this.flowLayoutPanelNav.Size = new System.Drawing.Size(300, 535);
+            this.flowLayoutPanelNav.Size = new System.Drawing.Size(225, 487);
             this.flowLayoutPanelNav.TabIndex = 0;
             // 
             // buttonEmployees
             // 
-            this.buttonEmployees.Location = new System.Drawing.Point(3, 3);
+            this.buttonEmployees.Location = new System.Drawing.Point(2, 2);
+            this.buttonEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEmployees.Name = "buttonEmployees";
-            this.buttonEmployees.Size = new System.Drawing.Size(297, 79);
+            this.buttonEmployees.Size = new System.Drawing.Size(223, 64);
             this.buttonEmployees.TabIndex = 0;
             this.buttonEmployees.Text = "Сотрудники";
             this.buttonEmployees.UseVisualStyleBackColor = true;
@@ -64,9 +64,10 @@
             // 
             // buttonShifts
             // 
-            this.buttonShifts.Location = new System.Drawing.Point(3, 88);
+            this.buttonShifts.Location = new System.Drawing.Point(2, 70);
+            this.buttonShifts.Margin = new System.Windows.Forms.Padding(2);
             this.buttonShifts.Name = "buttonShifts";
-            this.buttonShifts.Size = new System.Drawing.Size(297, 62);
+            this.buttonShifts.Size = new System.Drawing.Size(223, 50);
             this.buttonShifts.TabIndex = 1;
             this.buttonShifts.Text = "Смены";
             this.buttonShifts.UseVisualStyleBackColor = true;
@@ -74,28 +75,33 @@
             // 
             // buttonServices
             // 
-            this.buttonServices.Location = new System.Drawing.Point(3, 156);
+            this.buttonServices.Location = new System.Drawing.Point(2, 124);
+            this.buttonServices.Margin = new System.Windows.Forms.Padding(2);
             this.buttonServices.Name = "buttonServices";
-            this.buttonServices.Size = new System.Drawing.Size(297, 91);
+            this.buttonServices.Size = new System.Drawing.Size(223, 74);
             this.buttonServices.TabIndex = 2;
             this.buttonServices.Text = "Услуги";
             this.buttonServices.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanelMain
             // 
-            this.flowLayoutPanelMain.Location = new System.Drawing.Point(309, 4);
+            this.flowLayoutPanelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelMain.Location = new System.Drawing.Point(232, 3);
+            this.flowLayoutPanelMain.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
-            this.flowLayoutPanelMain.Size = new System.Drawing.Size(756, 544);
+            this.flowLayoutPanelMain.Size = new System.Drawing.Size(630, 494);
             this.flowLayoutPanelMain.TabIndex = 1;
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(863, 502);
             this.Controls.Add(this.flowLayoutPanelMain);
             this.Controls.Add(this.flowLayoutPanelNav);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminForm";
             this.Text = "Form";
             this.flowLayoutPanelNav.ResumeLayout(false);

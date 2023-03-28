@@ -20,6 +20,21 @@ namespace CourseProject.DAL.DAL.Admin
             return _context.Employee.Where(u => u.Users.UserRole >= 0).AsEnumerable();
         }
 
+        public IEnumerable<Employee> GetOnlyEmployees()
+        {
+            return _context.Employee.Where(u => u.Users.UserRole == 1).AsEnumerable();
+        }
+
+        public IEnumerable<Employee> GetAdmins()
+        {
+            return _context.Employee.Where(u => u.Users.UserRole == 2).AsEnumerable();
+        }
+
+        public IEnumerable<Employee> GetCleaners()
+        {
+            return _context.Employee.Where(u => u.Users.UserRole == 3).AsEnumerable();
+        }
+
         public Employee GetEmployee(int id)
         {
             return _context.Employee.FirstOrDefault(u => u.Id == id);
