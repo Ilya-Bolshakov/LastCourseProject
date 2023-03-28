@@ -63,7 +63,7 @@ namespace CourseProject.DTO
 
         public override string ToString()
         {
-            return $"{Name} {LastName} {Patronymic}. {Role}";
+            return $"{LastName} {Name} {Patronymic}. {Role}";
         }
     }
 }

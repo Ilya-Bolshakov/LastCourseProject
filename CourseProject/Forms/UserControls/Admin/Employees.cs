@@ -63,5 +63,11 @@ namespace CourseProject.Forms.UserControls.Admin
                 textBoxFilterName_TextChanged(this, e);
             }
         }
+
+        private void listBoxEmployees_SelectedValueChanged(object sender, EventArgs e)
+        {
+            buttonEdit.Enabled = listBoxEmployees.SelectedItem != null;
+            textBoxFilterName.Enabled = listBoxEmployees.SelectedItem != null;
+        }
     }
 }

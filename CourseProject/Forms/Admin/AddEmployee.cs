@@ -64,7 +64,7 @@ namespace CourseProject.Forms.Admin
             {
                 var newUser = new Users();
                 newUser.FirstName = textBoxName.Text;
-                newUser.LastName = textBoxPatronymic.Text;
+                newUser.LastName = textBoxSurname.Text;
                 newUser.Patronymic = textBoxPatronymic.Text;
                 newUser.Passport = textBoxPassport.Text;
                 newUser.DateOfBirth = dateTimePickerDateOfBirth.Value;

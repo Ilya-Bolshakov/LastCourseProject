@@ -43,6 +43,7 @@
             this.listBoxEmployees.Name = "listBoxEmployees";
             this.listBoxEmployees.Size = new System.Drawing.Size(360, 329);
             this.listBoxEmployees.TabIndex = 0;
+            this.listBoxEmployees.SelectedValueChanged += new System.EventHandler(this.listBoxEmployees_SelectedValueChanged);
             // 
             // buttonAddEmployee
             // 
@@ -68,6 +69,7 @@
             // textBoxFilterName
             // 
             this.textBoxFilterName.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxFilterName.Enabled = false;
             this.textBoxFilterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxFilterName.Location = new System.Drawing.Point(367, 67);
             this.textBoxFilterName.Name = "textBoxFilterName";
@@ -77,6 +79,7 @@
             // 
             // buttonEdit
             // 
+            this.buttonEdit.Enabled = false;
             this.buttonEdit.Location = new System.Drawing.Point(284, 376);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(95, 58);

@@ -1,4 +1,5 @@
 ﻿using CourseProject.DAL;
+using CourseProject.DTO;
 using CourseProject.Forms.Base;
 using CourseProject.Forms.UserControls.Admin;
 using System;
@@ -18,6 +19,7 @@ namespace CourseProject.Forms
         public AdminForm(Users user) : base(user)
         {
             InitializeComponent();
+            this.Text = new UserDto(user).ToString();
         }
 
         private void SetNewMainControl(UserControl control)
