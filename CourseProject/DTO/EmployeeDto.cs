@@ -12,7 +12,8 @@ namespace CourseProject.DTO
     public class EmployeeDto : UserDto
     {
         public string Address { get; set; }
-        public Work Work { get; set; }
+        public string Work { get; set; }
+        public int WorkId { get; set; }
         public DateTime Employment { get; set; }
 
         public EmployeeDto()
@@ -24,7 +25,8 @@ namespace CourseProject.DTO
         {
             Id = employee.Id;
             Address = employee.ResidentialAddress;
-            Work = employee.Work1;
+            Work = employee.Work1.Work1;
+            WorkId = employee.Work;
             Employment = employee.EmploymentDate;
 
             Name = employee.Users.FirstName;
@@ -46,8 +48,7 @@ namespace CourseProject.DTO
             employee.Id = Id;
             employee.ResidentialAddress = Address;
             employee.EmploymentDate = Employment;
-            employee.Work1 = Work;
-            employee.Work = Work.Id;
+            employee.Work = WorkId;
 
             
             return employee;

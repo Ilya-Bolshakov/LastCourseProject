@@ -64,7 +64,7 @@ namespace CourseProject.Helpers
             try
             {
                 var db = new EcoparkDbContext();
-                employee.Work1 = db.Work.FirstOrDefault(w => w.Id == employeeDto.Work.Id);
+                employee.Work1 = db.Work.FirstOrDefault(w => w.Id == employeeDto.WorkId);
                 db.Users.Add(newUser);
                 await db.SaveChangesAsync();
                 return true;

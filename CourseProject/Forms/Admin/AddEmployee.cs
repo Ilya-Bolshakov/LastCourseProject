@@ -54,7 +54,7 @@ namespace CourseProject.Forms.Admin
             var db = new EcoparkDbContext();
             comboBoxwork.DataSource = new WorkDal(db).GetWorks().ToList();
             comboBoxwork.DisplayMember = "Work1";
-            comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee?.Work?.Id);
+            comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee.Id);
             db.Dispose();
         }
 
@@ -79,10 +79,11 @@ namespace CourseProject.Forms.Admin
 
                 try
                 {
-                    Employee.Work = (Work)comboBoxwork.SelectedItem;
+                    var selectedWork = (Work)comboBoxwork.SelectedItem;
+                    Employee.WorkId = selectedWork.Id;
                     Employee.Employment = dateTimePickerEmplument.Value;
                     Employee.Address = textBoxAddress.Text;
-                    newUser.UserRole = Employee.Work.Id;
+                    newUser.UserRole = selectedWork.Id;
 
                     await AccountHelper.RegisterEmployee(newUser, textBoxPassword.Text, Employee);
 
@@ -103,9 +104,10 @@ namespace CourseProject.Forms.Admin
 
                 editE.EmploymentDate = dateTimePickerEmplument.Value;
                 editE.ResidentialAddress = textBoxAddress.Text;
-                Employee.Work = (Work)comboBoxwork.SelectedItem;
-                editE.Work = Employee.Work.Id;
-                editU.UserRole = Employee.Work.Id;
+                var selectedWork = (Work)comboBoxwork.SelectedItem;
+                Employee.WorkId = selectedWork.Id;
+                editE.Work = Employee.Id;
+                editU.UserRole = Employee.Id;
 
                 editU.FirstName = textBoxName.Text;
                 editU.LastName = textBoxSurname.Text;

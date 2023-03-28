@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\EmployeeDto.cs" />
+    <Compile Include="DTO\ShiftDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Enums\RoleEnum.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -144,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Admin\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\Admin\Shifts.resx">
+      <DependentUpon>Shifts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
