@@ -135,6 +135,12 @@
     <Compile Include="Forms\UserControls\Admin\Shifts.Designer.cs">
       <DependentUpon>Shifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControls\Employee\DetailUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\Employee\DetailUser.Designer.cs">
+      <DependentUpon>DetailUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControls\Employee\User.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Admin\Shifts.resx">
       <DependentUpon>Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\Employee\DetailUser.resx">
+      <DependentUpon>DetailUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Employee\User.resx">
       <DependentUpon>User.cs</DependentUpon>

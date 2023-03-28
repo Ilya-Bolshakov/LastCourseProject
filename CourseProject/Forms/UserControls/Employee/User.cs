@@ -48,5 +48,18 @@ namespace CourseProject.Forms.UserControls.Employee
             UserList = new BindingList<UserDto>(AllUsers.Where(u => u.Display.ToLower().Contains(textBoxFilterName.Text.ToLower())).ToList());
             listBoxUsers.DataSource = UserList;
         }
+
+        private void listBoxUsers_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listBoxUsers.SelectedItem != null)
+            {
+                var detailUser = new DetailUser();
+                detailUser.Width = panel.Width;
+                detailUser.Height = panel.Height;
+                panel.Controls.Clear();
+                panel.Controls.Add(detailUser);
+            }
+            
+        }
     }
 }
