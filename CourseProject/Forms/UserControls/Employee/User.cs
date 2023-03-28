@@ -37,5 +37,16 @@ namespace CourseProject.Forms.UserControls.Employee
             listBoxUsers.DataSource = UserList;
             listBoxUsers.DisplayMember = "Display";
         }
+
+        private void listBoxUsers_SelectedValueChanged(object sender, EventArgs e)
+        {
+            textBoxFilterName.Enabled = listBoxUsers.SelectedItem != null;
+        }
+
+        private void textBoxFilterName_TextChanged(object sender, EventArgs e)
+        {
+            UserList = new BindingList<UserDto>(AllUsers.Where(u => u.Display.ToLower().Contains(textBoxFilterName.Text.ToLower())).ToList());
+            listBoxUsers.DataSource = UserList;
+        }
     }
 }

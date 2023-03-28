@@ -15,8 +15,10 @@ namespace CourseProject
         {
             var db = new EcoparkDbContext();
             var admin = db.Users.FirstOrDefault(x => x.Employee.Work == 2);
-            var loginForm = new AdminForm(admin);
-            loginForm.Show();
+            var employee = db.Users.FirstOrDefault(x => x.Employee.Work == 1);
+            //var loginForm = new AdminForm(admin);
+            var employeeForm = new EmployeeForm(employee);
+            employeeForm.Show();
         }
     }
 }

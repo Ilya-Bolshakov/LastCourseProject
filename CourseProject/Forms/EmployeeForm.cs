@@ -1,5 +1,7 @@
 ﻿using CourseProject.DAL;
+using CourseProject.DTO;
 using CourseProject.Forms.Base;
+using CourseProject.Forms.UserControls.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,7 @@ namespace CourseProject.Forms
         public EmployeeForm(Users user) : base(user)
         {
             InitializeComponent();
+            Text = new UserDto(user).ToString();
         }
 
         private void SetNewMainControl(UserControl control)
@@ -27,7 +30,10 @@ namespace CourseProject.Forms
 
         private void buttonUsers_Click(object sender, EventArgs e)
         {
-
+            User user = new User();
+            user.Width = this.Width;
+            user.Height = this.Height;
+            SetNewMainControl(user);
         }
     }
 }
