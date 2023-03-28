@@ -135,6 +135,12 @@
     <Compile Include="Forms\UserControls\Admin\Shifts.Designer.cs">
       <DependentUpon>Shifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControls\Employee\User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\Employee\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <EmbeddedResource Include="Forms\Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Admin\Shifts.resx">
       <DependentUpon>Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\Employee\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,5 +219,6 @@
       <Name>CourseProject.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

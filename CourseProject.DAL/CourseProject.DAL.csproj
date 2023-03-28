@@ -55,6 +55,7 @@
     <Compile Include="DAL\Admin\ServiceDal.cs" />
     <Compile Include="DAL\Admin\ShiftDal.cs" />
     <Compile Include="DAL\Admin\WorkDal.cs" />
+    <Compile Include="DAL\EmployeeDal\UserDal.cs" />
     <Compile Include="EcoparkDbContext.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="House.cs" />

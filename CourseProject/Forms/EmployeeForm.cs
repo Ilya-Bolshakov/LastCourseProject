@@ -18,5 +18,16 @@ namespace CourseProject.Forms
         {
             InitializeComponent();
         }
+
+        private void SetNewMainControl(UserControl control)
+        {
+            flowLayoutPanelMain.Controls.Clear();
+            flowLayoutPanelMain.Controls.Add(control);
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

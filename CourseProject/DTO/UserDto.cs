@@ -24,6 +24,13 @@ namespace CourseProject.DTO
         public string Phone { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public string Display 
+        {
+            get
+            {
+                return $"{LastName} {Name} {Patronymic}. {Passport}";
+            }
+        }
 
         public UserDto()
         {
