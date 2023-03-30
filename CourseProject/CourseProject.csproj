@@ -39,6 +39,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,6 +56,7 @@
   <ItemGroup>
     <Compile Include="DTO\EmployeeDto.cs" />
     <Compile Include="DTO\ServiceDto.cs" />
+    <Compile Include="DTO\ServiceListDto.cs" />
     <Compile Include="DTO\ShiftDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="DTO\VisitDto.cs" />
@@ -106,6 +108,12 @@
     <Compile Include="Forms\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForms\AddServiceToVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForms\AddServiceToVisit.Designer.cs">
+      <DependentUpon>AddServiceToVisit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForms\AddVisit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +156,12 @@
     <Compile Include="Forms\UserControls\Employee\DetailUser.Designer.cs">
       <DependentUpon>DetailUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControls\Employee\DetailUserVisits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\Employee\DetailUserVisits.Designer.cs">
+      <DependentUpon>DetailUserVisits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControls\Employee\User.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +198,9 @@
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForms\AddServiceToVisit.resx">
+      <DependentUpon>AddServiceToVisit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForms\AddVisit.resx">
       <DependentUpon>AddVisit.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Employee\DetailUser.resx">
       <DependentUpon>DetailUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\Employee\DetailUserVisits.resx">
+      <DependentUpon>DetailUserVisits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Employee\User.resx">
       <DependentUpon>User.cs</DependentUpon>

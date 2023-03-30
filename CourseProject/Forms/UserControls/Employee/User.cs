@@ -17,9 +17,11 @@ namespace CourseProject.Forms.UserControls.Employee
     {
         public BindingList<UserDto> UserList { get; set; }
         public IList<UserDto> AllUsers { get; set; }
-        public User()
+        public UserDto Employee { get; set; }
+        public User(UserDto employee)
         {
             InitializeComponent();
+            Employee = employee;
         }
 
         private async void Users_Load(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace CourseProject.Forms.UserControls.Employee
         {
             if (listBoxUsers.SelectedItem != null)
             {
-                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem);
+                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem, Employee, this);
                 detailUser.Width = panel.Width;
                 detailUser.Height = panel.Height;
                 panel.Controls.Clear();
@@ -64,7 +66,11 @@ namespace CourseProject.Forms.UserControls.Employee
 
         public void DisplayVisit(VisitDto visit)
         {
-
+            var detailUser = new DetailUserVisits(visit);
+            detailUser.Width = panel.Width;
+            detailUser.Height = panel.Height;
+            panel.Controls.Clear();
+            panel.Controls.Add(detailUser);
         }
     }
 }

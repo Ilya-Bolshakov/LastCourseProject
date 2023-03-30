@@ -16,10 +16,13 @@ namespace CourseProject.Forms
 {
     public partial class EmployeeForm : BaseUserForm
     {
+        public UserDto Employee { get; set; }
         public EmployeeForm(Users user) : base(user)
         {
             InitializeComponent();
-            Text = new UserDto(user).ToString();
+            Employee = new UserDto(user);
+            Text = Employee.ToString();
+
         }
 
         private void SetNewMainControl(UserControl control)
@@ -30,7 +33,7 @@ namespace CourseProject.Forms
 
         private void buttonUsers_Click(object sender, EventArgs e)
         {
-            User user = new User();
+            User user = new User(Employee);
             user.Width = this.Width;
             user.Height = this.Height;
             SetNewMainControl(user);

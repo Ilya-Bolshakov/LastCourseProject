@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CourseProject.DTO
 {
@@ -16,6 +14,7 @@ namespace CourseProject.DTO
         public UserDto User { get; set; }
         public DateTime Start { get; set; }
         public DateTime? Finish { get; set; }
+        public List<ServiceListDto> Services { get; set; }
 
         public VisitDto(Visit visit)
         {
@@ -26,11 +25,28 @@ namespace CourseProject.DTO
             Employee = new EmployeeDto(visit.Employee);
             Start = visit.DateOfVisit;
             Finish = visit.DateOfVisitEnd;
+            Services = visit.ServiceList.Where(v => v.IDVisit == Id).Select(v => new ServiceListDto(v)).ToList();
+        }
+
+        public VisitDto()
+        {
         }
 
         public override string ToString()
         {
-            return $"Посещение #{Id}. {User.Display}. {Start} - {Finish}";
+            return $"Посещение #{Id}. {User.Display}. {Start.ToShortDateString()} - {Finish?.ToShortDateString()}";
+        }
+
+        internal Visit MapToOrm()
+        {
+            var visit = new Visit();
+            visit.IDVisit = Id;
+            visit.UserId = UserId;
+            visit.IDEmployeeOnReception = EmployeeId;
+            visit.DateOfVisit = Start;
+            visit.DateOfVisitEnd = Finish;
+            visit.ServiceList = Services?.Select(i => i.MapToOrm()).ToList();
+            return visit;
         }
     }
 }

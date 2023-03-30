@@ -23,5 +23,17 @@ namespace CourseProject.DAL.DAL.EmployeeDal
         {
             return _context.Visit.Where(v => v.UserId == userId).AsEnumerable();
         }
+
+        public async Task AddVisit(Visit visit)
+        {
+            _context.Visit.Add(visit);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateVisit(Visit visit)
+        {
+            _context.Entry(visit).State = System.Data.Entity.EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
     }
 }
