@@ -26,7 +26,7 @@ namespace CourseProject.Forms.UserControls.Employee
 
         private void DetailUserVisits_Load(object sender, EventArgs e)
         {
-            dataGridView.DataSource = Visit.Services;
+            dataGridView.DataSource = new BindingList<ServiceListDto>(Visit.Services.ToList());
             dataGridView.Columns["VisitId"].Visible = false;
             dataGridView.Columns["Service"].Visible = false;
         }
@@ -47,13 +47,22 @@ namespace CourseProject.Forms.UserControls.Employee
                     slNew.ServiceId = form.SelectedService.Id;
                     slNew.Count = 1;
                     await dal.AddServiceToList(slNew.MapToOrm());
+                    DetailUserVisits_Load(this, e);
+                    textBoxFilterName_TextChanged(this, e);
                 }
                 else 
                 {
                     s.ServiceCount++;
                     await dal.UpdateServiceToList(s);
+                    DetailUserVisits_Load(this, e);
+                    textBoxFilterName_TextChanged(this, e);
                 }
             }
+        }
+
+        private void textBoxFilterName_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = new BindingList<ServiceListDto>(Visit.Services.Where(s => s.Name.ToLower().Contains(textBoxFilterName.Text.ToLower())).ToList());
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAddService = new System.Windows.Forms.Button();
             this.labelFilter = new System.Windows.Forms.Label();
             this.labelVisit = new System.Windows.Forms.Label();
@@ -36,15 +35,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(337, 360);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(122, 51);
-            this.buttonEdit.TabIndex = 20;
-            this.buttonEdit.Text = "Редактировать";
-            this.buttonEdit.UseVisualStyleBackColor = true;
             // 
             // buttonAddService
             // 
@@ -82,12 +72,17 @@
             this.textBoxFilterName.Name = "textBoxFilterName";
             this.textBoxFilterName.Size = new System.Drawing.Size(159, 20);
             this.textBoxFilterName.TabIndex = 21;
+            this.textBoxFilterName.TextChanged += new System.EventHandler(this.textBoxFilterName_TextChanged);
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(16, 94);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(443, 245);
             this.dataGridView.TabIndex = 22;
             // 
@@ -97,7 +92,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textBoxFilterName);
-            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAddService);
             this.Controls.Add(this.labelFilter);
             this.Controls.Add(this.labelVisit);
@@ -111,8 +105,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAddService;
         private System.Windows.Forms.Label labelFilter;
         private System.Windows.Forms.Label labelVisit;

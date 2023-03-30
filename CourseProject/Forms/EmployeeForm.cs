@@ -38,5 +38,13 @@ namespace CourseProject.Forms
             user.Height = this.Height;
             SetNewMainControl(user);
         }
+
+        private void buttonAggreement_Click(object sender, EventArgs e)
+        {
+            UserAgreement user = new UserAgreement(Employee);
+            user.Width = this.Width;
+            user.Height = this.Height;
+            SetNewMainControl(user);
+        }
     }
 }

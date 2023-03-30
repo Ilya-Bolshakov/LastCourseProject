@@ -25,6 +25,8 @@ namespace CourseProject.DAL
 
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime AgreementDateEnd { get; set; }
 
         public virtual Users Users { get; set; }
 

@@ -3,8 +3,6 @@ using CourseProject.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CourseProject.Extensions;
 
 namespace CourseProject.DTO
@@ -24,6 +22,7 @@ namespace CourseProject.DTO
         public string Phone { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public List<AgreementDto> Agreements { get; set; }
         public string Display 
         {
             get
@@ -50,6 +49,7 @@ namespace CourseProject.DTO
             Gender = ((GenderEnum)Enum.GetValues(typeof(GenderEnum)).GetValue(user.Gender)).ToString();
             RoleEnum g = new RoleEnum();
             Role = g.GetEnumValue(user.UserRole);
+            Agreements = user.Agreement.Select(a => new AgreementDto(a)).ToList();
         }
 
         public Users MapToOrm()

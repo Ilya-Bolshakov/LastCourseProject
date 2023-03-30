@@ -92,6 +92,7 @@
             this.buttonAggreement.TabIndex = 2;
             this.buttonAggreement.Text = "Бронирование";
             this.buttonAggreement.UseVisualStyleBackColor = true;
+            this.buttonAggreement.Click += new System.EventHandler(this.buttonAggreement_Click);
             // 
             // EmployeeForm
             // 

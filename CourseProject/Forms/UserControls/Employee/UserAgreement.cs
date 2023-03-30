@@ -13,18 +13,18 @@ using System.Windows.Forms;
 
 namespace CourseProject.Forms.UserControls.Employee
 {
-    public partial class User : UserControl
+    public partial class UserAgreement : UserControl
     {
         public BindingList<UserDto> UserList { get; set; }
         public IList<UserDto> AllUsers { get; set; }
         public UserDto Employee { get; set; }
-        public User(UserDto employee)
+        public UserAgreement(UserDto employee)
         {
             InitializeComponent();
             Employee = employee;
         }
 
-        private async void Users_Load(object sender, EventArgs e)
+        private async void UserAgreement_Load(object sender, EventArgs e)
         {
             var task = Task.Run(() =>
             {
@@ -51,25 +51,21 @@ namespace CourseProject.Forms.UserControls.Employee
             listBoxUsers.DataSource = UserList;
         }
 
+        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void listBoxUsers_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listBoxUsers.SelectedItem != null)
             {
-                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem, Employee, this);
-                detailUser.Width = panel.Width;
-                detailUser.Height = panel.Height;
+                var agreements = new Agreements((UserDto)listBoxUsers.SelectedItem);
+                agreements.Width = panel.Width;
+                agreements.Height = panel.Height;
                 panel.Controls.Clear();
-                panel.Controls.Add(detailUser);
+                panel.Controls.Add(agreements);
             }
-        }
-
-        public void DisplayVisit(VisitDto visit)
-        {
-            var detailUser = new DetailUserVisits(visit);
-            detailUser.Width = panel.Width;
-            detailUser.Height = panel.Height;
-            panel.Controls.Clear();
-            panel.Controls.Add(detailUser);
         }
     }
 }

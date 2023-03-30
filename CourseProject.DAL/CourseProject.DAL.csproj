@@ -55,6 +55,7 @@
     <Compile Include="DAL\Admin\ServiceDal.cs" />
     <Compile Include="DAL\Admin\ShiftDal.cs" />
     <Compile Include="DAL\Admin\WorkDal.cs" />
+    <Compile Include="DAL\EmployeeDal\AgreementDal.cs" />
     <Compile Include="DAL\EmployeeDal\ServiceListDal.cs" />
     <Compile Include="DAL\EmployeeDal\UserDal.cs" />
     <Compile Include="DAL\EmployeeDal\VisitDal.cs" />
