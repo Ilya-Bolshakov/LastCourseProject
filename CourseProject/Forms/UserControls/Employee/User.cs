@@ -53,13 +53,18 @@ namespace CourseProject.Forms.UserControls.Employee
         {
             if (listBoxUsers.SelectedItem != null)
             {
-                var detailUser = new DetailUser();
+                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem);
                 detailUser.Width = panel.Width;
                 detailUser.Height = panel.Height;
                 panel.Controls.Clear();
                 panel.Controls.Add(detailUser);
             }
             
+        }
+
+        public void DisplayVisit(VisitDto visit)
+        {
+
         }
     }
 }

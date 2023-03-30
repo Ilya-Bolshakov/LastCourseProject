@@ -26,7 +26,7 @@ namespace CourseProject.DAL
         public DateTime DateOfVisit { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime DateOfVisitEnd { get; set; }
+        public DateTime? DateOfVisitEnd { get; set; }
 
         public virtual Employee Employee { get; set; }
 
