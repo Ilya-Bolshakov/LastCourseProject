@@ -102,6 +102,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(249, 26);
             this.textBoxPassword.TabIndex = 12;
+            this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
             // 
             // textBoxLogin
             // 

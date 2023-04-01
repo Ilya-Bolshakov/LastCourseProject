@@ -31,7 +31,7 @@ namespace CourseProject.Forms
             {
                 var newUser = new Users();
                 newUser.FirstName = textBoxName.Text;
-                newUser.LastName = textBoxPatronymic.Text;
+                newUser.LastName = textBoxSurname.Text;
                 newUser.Patronymic = textBoxPatronymic.Text;
                 newUser.Passport = textBoxPassport.Text;
                 newUser.DateOfBirth = dateTimePickerDateOfBirth.Value;
@@ -61,7 +61,8 @@ namespace CourseProject.Forms
 
         private void textBoxName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidateSimpleText(textBoxName.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxName.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxName, null);
@@ -70,13 +71,14 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxName, "Поле 'Имя' должно быть одним словом, содержащим только буквы");
+                errorProvider.SetError(textBoxName, errorMessage);
             }
         }
 
         private void textBoxPhone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidatePassport(textBoxPhone.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePhone(textBoxPhone.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxPhone, null);
@@ -85,13 +87,14 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxPhone, "Поле 'Телефон' должно содержать от 7 до 12 цифр");
+                errorProvider.SetError(textBoxPhone, errorMessage);
             }
         }
 
         private void textBoxSurname_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidateSimpleText(textBoxSurname.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxSurname.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxSurname, null);
@@ -100,13 +103,14 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxSurname, "Поле 'Фамилия' должно быть одним словом, содержащим только буквы");
+                errorProvider.SetError(textBoxSurname, errorMessage);
             }
         }
 
         private void textBoxPatronymic_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidateSimpleText(textBoxPatronymic.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxPatronymic.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxPatronymic, null);
@@ -115,13 +119,14 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxPatronymic, "Поле 'Отчество' должно быть одним словом, содержащим только буквы");
+                errorProvider.SetError(textBoxPatronymic, errorMessage);
             }
         }
 
         private void textBoxPassport_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidatePassport(textBoxPassport.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePassport(textBoxPassport.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxPassport, null);
@@ -130,13 +135,14 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxPassport, "Поле 'Паспорт' должно содержать от 7 до 12 цифр");
+                errorProvider.SetError(textBoxPassport, errorMessage);
             }
         }
 
         private void textBoxLogin_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ValidateHelper.ValidateLogin(textBoxLogin.Text))
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateLogin(textBoxLogin.Text, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(textBoxLogin, null);
@@ -145,7 +151,23 @@ namespace CourseProject.Forms
             {
                 e.Cancel = true;
                 textBoxName.Focus();
-                errorProvider.SetError(textBoxLogin, "Такой логин уже существует");
+                errorProvider.SetError(textBoxLogin, errorMessage);
+            }
+        }
+
+        private void textBoxPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePassword(textBoxPassword.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPassword, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxPassword, errorMessage);
             }
         }
     }

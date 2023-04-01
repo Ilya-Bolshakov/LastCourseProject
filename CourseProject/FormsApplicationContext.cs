@@ -19,8 +19,9 @@ namespace CourseProject
             var user = db.Users.FirstOrDefault(x => x.UserRole == 0);
             //var loginForm = new AdminForm(admin);
             //var employeeForm = new EmployeeForm(employee);
-            var userForm = new UserForm(user);
-            userForm.Show();
+            //var userForm = new UserForm(user);
+            var loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }
