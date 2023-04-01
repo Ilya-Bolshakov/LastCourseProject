@@ -209,6 +209,7 @@
     <Compile Include="Guards\PBKDF2HashHelper.cs" />
     <Compile Include="Guards\SecurePasswordHasher.cs" />
     <Compile Include="Helpers\AccountHelper.cs" />
+    <Compile Include="Helpers\ValidateHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminForm.resx">

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelEntry = new System.Windows.Forms.Label();
             this.labelHaveAcc = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEntry
@@ -109,6 +112,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(249, 26);
             this.textBoxLogin.TabIndex = 11;
+            this.textBoxLogin.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxLogin_Validating);
             // 
             // labelPassword
             // 
@@ -152,6 +156,7 @@
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(249, 26);
             this.textBoxSurname.TabIndex = 19;
+            this.textBoxSurname.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxSurname_Validating);
             // 
             // textBoxName
             // 
@@ -162,6 +167,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(249, 26);
             this.textBoxName.TabIndex = 18;
+            this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxName_Validating);
             // 
             // labelSurname
             // 
@@ -194,6 +200,7 @@
             this.textBoxPassport.Name = "textBoxPassport";
             this.textBoxPassport.Size = new System.Drawing.Size(249, 26);
             this.textBoxPassport.TabIndex = 23;
+            this.textBoxPassport.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassport_Validating);
             // 
             // textBoxPatronymic
             // 
@@ -204,6 +211,7 @@
             this.textBoxPatronymic.Name = "textBoxPatronymic";
             this.textBoxPatronymic.Size = new System.Drawing.Size(249, 26);
             this.textBoxPatronymic.TabIndex = 22;
+            this.textBoxPatronymic.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPatronymic_Validating);
             // 
             // labelPassport
             // 
@@ -265,6 +273,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(249, 26);
             this.textBoxPhone.TabIndex = 27;
+            this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPhone_Validating);
             // 
             // radioButtonMale
             // 
@@ -288,10 +297,15 @@
             this.radioButtonFemale.Text = "Женщина";
             this.radioButtonFemale.UseVisualStyleBackColor = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1377, 716);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
@@ -318,6 +332,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "RegisterForm";
             this.Text = "Регистрация";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +362,6 @@
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonFemale;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
