@@ -152,7 +152,7 @@
             // 
             this.textBoxSurname.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSurname.Location = new System.Drawing.Point(485, 155);
+            this.textBoxSurname.Location = new System.Drawing.Point(485, 89);
             this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(249, 26);
@@ -163,7 +163,7 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxName.Location = new System.Drawing.Point(485, 99);
+            this.textBoxName.Location = new System.Drawing.Point(485, 138);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(249, 26);
@@ -174,7 +174,7 @@
             // 
             this.labelSurname.AutoSize = true;
             this.labelSurname.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSurname.Location = new System.Drawing.Point(236, 144);
+            this.labelSurname.Location = new System.Drawing.Point(236, 78);
             this.labelSurname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSurname.Name = "labelSurname";
             this.labelSurname.Size = new System.Drawing.Size(173, 53);
@@ -185,7 +185,7 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(313, 99);
+            this.labelName.Location = new System.Drawing.Point(313, 138);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(96, 53);

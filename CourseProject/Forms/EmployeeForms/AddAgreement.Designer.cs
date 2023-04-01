@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelFinish = new System.Windows.Forms.Label();
             this.labelStart = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.labelText = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -101,6 +104,7 @@
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(484, 24);
             this.comboBox.TabIndex = 9;
+            this.comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox_Validating);
             // 
             // label1
             // 
@@ -111,10 +115,15 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Выбор объекта бронирования";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // AddAgreement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox);
@@ -127,6 +136,7 @@
             this.Name = "AddAgreement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый договор";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +152,6 @@
         private System.Windows.Forms.Label labelText;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

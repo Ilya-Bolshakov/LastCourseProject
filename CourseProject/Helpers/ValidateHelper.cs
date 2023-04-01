@@ -88,5 +88,18 @@ namespace CourseProject.Helpers
             }
             return true;
         }
+
+        public static bool ValidateSelectedItem<T>(object item, ref string errorMessage)
+        {
+            if (item is T)
+            {
+                return true;
+            }
+            else
+            {
+                errorMessage = "Элемент должен быть выбран";
+                return false;
+            }
+        }
     }
 }
