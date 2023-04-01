@@ -1,6 +1,7 @@
 ﻿using CourseProject.DAL;
 using CourseProject.DAL.DAL.Admin;
 using CourseProject.DTO;
+using CourseProject.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,27 @@ namespace CourseProject.Forms.EmployeeForms
             SelectedService = comboBox.SelectedItem as ServiceDto;
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void comboBox_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<ServiceDto>(comboBox.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBox, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBox.Focus();
+                errorProvider.SetError(comboBox, errorMessage);
+            }
+        }
+
+        private void comboBox_TextChanged(object sender, EventArgs e)
+        {
+            comboBox.DataSource = AllServices.Where(i => i.Name.ToLower().Contains(comboBox.Text.ToLower())).ToList();
         }
     }
 }

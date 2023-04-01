@@ -54,5 +54,10 @@ namespace CourseProject.Forms.EmployeeForms
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerFinish.MinDate = dateTimePickerStart.Value;
+        }
     }
 }

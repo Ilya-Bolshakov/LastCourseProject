@@ -38,41 +38,47 @@
             // 
             // dateTimePickerStart
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(181, 55);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(241, 68);
+            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerStart.TabIndex = 0;
+            this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerFinish
             // 
-            this.dateTimePickerFinish.Location = new System.Drawing.Point(181, 102);
+            this.dateTimePickerFinish.Location = new System.Drawing.Point(241, 126);
+            this.dateTimePickerFinish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerFinish.Name = "dateTimePickerFinish";
-            this.dateTimePickerFinish.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFinish.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerFinish.TabIndex = 1;
             // 
             // labelStart
             // 
             this.labelStart.AutoSize = true;
-            this.labelStart.Location = new System.Drawing.Point(34, 55);
+            this.labelStart.Location = new System.Drawing.Point(45, 68);
+            this.labelStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(85, 13);
+            this.labelStart.Size = new System.Drawing.Size(107, 16);
             this.labelStart.TabIndex = 2;
             this.labelStart.Text = "Время приезда";
             // 
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Location = new System.Drawing.Point(34, 108);
+            this.labelFinish.Location = new System.Drawing.Point(45, 133);
+            this.labelFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(85, 13);
+            this.labelFinish.Size = new System.Drawing.Size(107, 16);
             this.labelFinish.TabIndex = 3;
             this.labelFinish.Text = "Время отъезда";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(384, 174);
+            this.buttonSave.Location = new System.Drawing.Point(512, 214);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(106, 46);
+            this.buttonSave.Size = new System.Drawing.Size(141, 57);
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -81,9 +87,10 @@
             // checkBox
             // 
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(416, 104);
+            this.checkBox.Location = new System.Drawing.Point(555, 128);
+            this.checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(115, 17);
+            this.checkBox.Size = new System.Drawing.Size(142, 20);
             this.checkBox.TabIndex = 5;
             this.checkBox.Text = "Оставить пустым";
             this.checkBox.UseVisualStyleBackColor = true;
@@ -91,15 +98,16 @@
             // 
             // AddVisit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 281);
+            this.ClientSize = new System.Drawing.Size(757, 346);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelFinish);
             this.Controls.Add(this.labelStart);
             this.Controls.Add(this.dateTimePickerFinish);
             this.Controls.Add(this.dateTimePickerStart);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddVisit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новое посещение";
