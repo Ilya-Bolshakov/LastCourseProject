@@ -18,6 +18,45 @@ namespace CourseProject.Helpers
             return true;
         }
 
+        public static bool ValidateServiceName(string text, ref string errorMessage)
+        {
+            var regex = new Regex(@"^[a-zA-Zа-яА-Я \d]+$");
+            if (String.IsNullOrEmpty(text))
+            {
+                errorMessage = "Название услуги должно быть заполнено";
+                return false;
+            }
+            if (!regex.IsMatch(text))
+            {
+                errorMessage = "Название услуги должно содержать только цифры, буквы и символ Пробела";
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidatePrice(string text, ref string errorMessage)
+        {
+            if (decimal.TryParse(text, out var price))
+            {
+                return true;
+            }
+            else
+            {
+                errorMessage = "Поле должно быть числом максимум с двумя знаками после запятой";
+                return false;
+            }
+        }
+
+        public static bool ValidateEmpty(string text, ref string errorMessage)
+        {
+            if (String.IsNullOrEmpty(text))
+            {
+                errorMessage = "Поле должно быть заполнено";
+                return false;
+            }
+            return true;
+        }
+
         public static bool ValidatePassport(string passport, ref string errorMessage)
         {
             var regex = new Regex(@"^\d{7,12}$");
