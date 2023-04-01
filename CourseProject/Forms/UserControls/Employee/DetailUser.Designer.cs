@@ -43,9 +43,10 @@
             // 
             this.labelUser.AutoSize = true;
             this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUser.Location = new System.Drawing.Point(53, 39);
+            this.labelUser.Location = new System.Drawing.Point(71, 48);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(60, 24);
+            this.labelUser.Size = new System.Drawing.Size(79, 29);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "label1";
             // 
@@ -53,26 +54,30 @@
             // 
             this.labelFilter.AutoSize = true;
             this.labelFilter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFilter.Location = new System.Drawing.Point(477, 17);
+            this.labelFilter.Location = new System.Drawing.Point(636, 21);
+            this.labelFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFilter.Name = "labelFilter";
-            this.labelFilter.Size = new System.Drawing.Size(75, 29);
+            this.labelFilter.Size = new System.Drawing.Size(90, 36);
             this.labelFilter.TabIndex = 7;
             this.labelFilter.Text = "Фильтр";
             // 
             // listBoxVisits
             // 
             this.listBoxVisits.FormattingEnabled = true;
-            this.listBoxVisits.Location = new System.Drawing.Point(3, 119);
+            this.listBoxVisits.ItemHeight = 16;
+            this.listBoxVisits.Location = new System.Drawing.Point(4, 146);
+            this.listBoxVisits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxVisits.Name = "listBoxVisits";
-            this.listBoxVisits.Size = new System.Drawing.Size(638, 199);
+            this.listBoxVisits.Size = new System.Drawing.Size(849, 244);
             this.listBoxVisits.TabIndex = 9;
             this.listBoxVisits.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxVisits_MouseDoubleClick);
             // 
             // buttonAddVisit
             // 
-            this.buttonAddVisit.Location = new System.Drawing.Point(462, 341);
+            this.buttonAddVisit.Location = new System.Drawing.Point(616, 420);
+            this.buttonAddVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddVisit.Name = "buttonAddVisit";
-            this.buttonAddVisit.Size = new System.Drawing.Size(134, 51);
+            this.buttonAddVisit.Size = new System.Drawing.Size(179, 63);
             this.buttonAddVisit.TabIndex = 10;
             this.buttonAddVisit.Text = "Новое посещение";
             this.buttonAddVisit.UseVisualStyleBackColor = true;
@@ -80,9 +85,10 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(308, 341);
+            this.buttonEdit.Location = new System.Drawing.Point(411, 420);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(122, 51);
+            this.buttonEdit.Size = new System.Drawing.Size(163, 63);
             this.buttonEdit.TabIndex = 11;
             this.buttonEdit.Text = "Редактировать";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -90,41 +96,45 @@
             // 
             // dateTimePickerStart
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(409, 44);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(545, 54);
+            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerStart.TabIndex = 12;
             this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerFinish
             // 
-            this.dateTimePickerFinish.Location = new System.Drawing.Point(409, 82);
+            this.dateTimePickerFinish.Location = new System.Drawing.Point(545, 101);
+            this.dateTimePickerFinish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerFinish.Name = "dateTimePickerFinish";
-            this.dateTimePickerFinish.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFinish.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerFinish.TabIndex = 13;
             this.dateTimePickerFinish.ValueChanged += new System.EventHandler(this.dateTimePickerFinish_ValueChanged);
             // 
             // labelStart
             // 
             this.labelStart.AutoSize = true;
-            this.labelStart.Location = new System.Drawing.Point(360, 48);
+            this.labelStart.Location = new System.Drawing.Point(480, 59);
+            this.labelStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(14, 13);
+            this.labelStart.Size = new System.Drawing.Size(16, 16);
             this.labelStart.TabIndex = 14;
             this.labelStart.Text = "С";
             // 
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Location = new System.Drawing.Point(360, 88);
+            this.labelFinish.Location = new System.Drawing.Point(480, 108);
+            this.labelFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(21, 13);
+            this.labelFinish.Size = new System.Drawing.Size(25, 16);
             this.labelFinish.TabIndex = 15;
             this.labelFinish.Text = "По";
             // 
             // DetailUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelFinish);
             this.Controls.Add(this.labelStart);
@@ -135,8 +145,9 @@
             this.Controls.Add(this.listBoxVisits);
             this.Controls.Add(this.labelFilter);
             this.Controls.Add(this.labelUser);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DetailUser";
-            this.Size = new System.Drawing.Size(671, 446);
+            this.Size = new System.Drawing.Size(895, 549);
             this.Load += new System.EventHandler(this.DetailUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,11 +159,11 @@
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label labelFilter;
         private System.Windows.Forms.ListBox listBoxVisits;
-        private System.Windows.Forms.Button buttonAddVisit;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerFinish;
         private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.Label labelFinish;
+        public System.Windows.Forms.Button buttonAddVisit;
+        public System.Windows.Forms.Button buttonEdit;
     }
 }

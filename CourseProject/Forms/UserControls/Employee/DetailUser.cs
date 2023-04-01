@@ -17,8 +17,8 @@ namespace CourseProject.Forms.UserControls.User
         public IList<VisitDto> AllVisits { get; set; }
         public UserDto User { get; set; }
         public UserDto Employee { get; set; }
-        public User Control { get; set; }
-        public DetailUser(UserDto user, UserDto employee, User control)
+        private Action<VisitDto> _showVisits; 
+        public DetailUser(UserDto user, UserDto employee, Action<VisitDto> action)
         {
             InitializeComponent();
             User = user;
@@ -27,7 +27,7 @@ namespace CourseProject.Forms.UserControls.User
             buttonEdit.Enabled = false;
             dateTimePickerFinish.Enabled = false;
             dateTimePickerStart.Enabled = false;
-            Control = control;
+            _showVisits = action;
         }
 
         private async void DetailUser_Load(object sender, System.EventArgs e)
@@ -130,7 +130,7 @@ namespace CourseProject.Forms.UserControls.User
         {
             if (listBoxVisits.SelectedItem != null)
             {
-                Control.DisplayVisit((VisitDto)listBoxVisits.SelectedItem);
+                _showVisits((VisitDto)listBoxVisits.SelectedItem);
             }
         }
     }

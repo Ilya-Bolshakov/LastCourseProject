@@ -22,7 +22,6 @@ namespace CourseProject.Forms.UserControls.User
             InitializeComponent();
             User = user;
             labelUser.Text = user.Display;
-            buttonEdit.Visible = User.RoleInt != 0;
         }
 
         private void listBoxAgreements_MouseDoubleClick(object sender, MouseEventArgs e)

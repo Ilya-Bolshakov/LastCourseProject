@@ -3,13 +3,6 @@ using CourseProject.DTO;
 using CourseProject.Forms.Base;
 using CourseProject.Forms.UserControls.User;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseProject.Forms
@@ -37,6 +30,7 @@ namespace CourseProject.Forms
         private void buttonUsers_Click(object sender, EventArgs e)
         {
             Agreements user = new Agreements(User);
+            user.buttonEdit.Visible = false;
             user.Width = this.Width;
             user.Height = this.Height;
             SetNewMainControl(user);
@@ -48,6 +42,26 @@ namespace CourseProject.Forms
             user.Width = this.Width;
             user.Height = this.Height;
             SetNewMainControl(user);
+        }
+
+        private void buttonVisits_Click(object sender, EventArgs e)
+        {
+            DetailUser user = new DetailUser(User, null, DisplayVisit);
+            user.buttonEdit.Visible = false;
+            user.buttonAddVisit.Visible = false;
+            user.Width = this.Width;
+            user.Height = this.Height;
+            SetNewMainControl(user);
+        }
+
+        public void DisplayVisit(VisitDto visit)
+        {
+            var detailUser = new DetailUserVisits(visit);
+            detailUser.buttonAddService.Visible = false;
+            detailUser.Width = flowLayoutPanelMain.Width;
+            detailUser.Height = flowLayoutPanelMain.Height;
+            flowLayoutPanelMain.Controls.Clear();
+            flowLayoutPanelMain.Controls.Add(detailUser);
         }
     }
 }

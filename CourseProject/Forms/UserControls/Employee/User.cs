@@ -5,9 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,7 +53,7 @@ namespace CourseProject.Forms.UserControls.User
         {
             if (listBoxUsers.SelectedItem != null)
             {
-                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem, Employee, this);
+                var detailUser = new DetailUser((UserDto)listBoxUsers.SelectedItem, Employee, DisplayVisit);
                 detailUser.Width = panel.Width;
                 detailUser.Height = panel.Height;
                 panel.Controls.Clear();

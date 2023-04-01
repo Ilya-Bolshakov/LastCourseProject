@@ -32,7 +32,7 @@
             this.flowLayoutPanelNav = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
-            this.buttonAggreement = new System.Windows.Forms.Button();
+            this.buttonVisits = new System.Windows.Forms.Button();
             this.flowLayoutPanelNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.flowLayoutPanelNav.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.flowLayoutPanelNav.Controls.Add(this.buttonProfile);
             this.flowLayoutPanelNav.Controls.Add(this.buttonUsers);
-            this.flowLayoutPanelNav.Controls.Add(this.buttonAggreement);
+            this.flowLayoutPanelNav.Controls.Add(this.buttonVisits);
             this.flowLayoutPanelNav.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelNav.Location = new System.Drawing.Point(1, 5);
             this.flowLayoutPanelNav.Margin = new System.Windows.Forms.Padding(4);
@@ -85,15 +85,16 @@
             this.buttonUsers.UseVisualStyleBackColor = true;
             this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
-            // buttonAggreement
+            // buttonVisits
             // 
-            this.buttonAggreement.Location = new System.Drawing.Point(3, 151);
-            this.buttonAggreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonAggreement.Name = "buttonAggreement";
-            this.buttonAggreement.Size = new System.Drawing.Size(297, 91);
-            this.buttonAggreement.TabIndex = 2;
-            this.buttonAggreement.Text = "История посещений";
-            this.buttonAggreement.UseVisualStyleBackColor = true;
+            this.buttonVisits.Location = new System.Drawing.Point(3, 151);
+            this.buttonVisits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonVisits.Name = "buttonVisits";
+            this.buttonVisits.Size = new System.Drawing.Size(297, 91);
+            this.buttonVisits.TabIndex = 2;
+            this.buttonVisits.Text = "История посещений";
+            this.buttonVisits.UseVisualStyleBackColor = true;
+            this.buttonVisits.Click += new System.EventHandler(this.buttonVisits_Click);
             // 
             // UserForm
             // 
@@ -115,6 +116,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelNav;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button buttonUsers;
-        private System.Windows.Forms.Button buttonAggreement;
+        private System.Windows.Forms.Button buttonVisits;
     }
 }

@@ -39,7 +39,7 @@
             // buttonAddAgreement
             // 
             this.buttonAddAgreement.Location = new System.Drawing.Point(613, 421);
-            this.buttonAddAgreement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddAgreement.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddAgreement.Name = "buttonAddAgreement";
             this.buttonAddAgreement.Size = new System.Drawing.Size(179, 63);
             this.buttonAddAgreement.TabIndex = 14;
@@ -52,7 +52,7 @@
             this.listBoxAgreements.FormattingEnabled = true;
             this.listBoxAgreements.ItemHeight = 16;
             this.listBoxAgreements.Location = new System.Drawing.Point(1, 148);
-            this.listBoxAgreements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxAgreements.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxAgreements.Name = "listBoxAgreements";
             this.listBoxAgreements.Size = new System.Drawing.Size(849, 244);
             this.listBoxAgreements.TabIndex = 13;
@@ -113,7 +113,7 @@
             this.Controls.Add(this.buttonAddAgreement);
             this.Controls.Add(this.listBoxAgreements);
             this.Controls.Add(this.labelUser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Agreements";
             this.Size = new System.Drawing.Size(855, 533);
             this.Load += new System.EventHandler(this.Agreements_Load);
@@ -128,6 +128,6 @@
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.TextBox textBoxFilterName;
         private System.Windows.Forms.Label labelFilter;
-        private System.Windows.Forms.Button buttonEdit;
+        public System.Windows.Forms.Button buttonEdit;
     }
 }
