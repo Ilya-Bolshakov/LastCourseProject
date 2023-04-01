@@ -4,12 +4,7 @@ using CourseProject.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 
 namespace CourseProject.Forms.EmployeeForms
@@ -17,12 +12,14 @@ namespace CourseProject.Forms.EmployeeForms
     public partial class AddAgreement : Form
     {
         public AgreementDto Agreement { get; set; }
+        public List<House> Houses { get; set; }
         public AddAgreement()
         {
             InitializeComponent();
             Agreement = new AgreementDto();
             var db = new EcoparkDbContext();
-            comboBox.DataSource = db.House.ToList();
+            Houses = db.House.ToList();
+            comboBox.DataSource = new BindingList<House>(Houses);
             dateTimePickerFinish.Value = dateTimePickerStart.Value.AddDays(1);
         }
 
@@ -31,9 +28,9 @@ namespace CourseProject.Forms.EmployeeForms
             InitializeComponent();
             Agreement = agreement;
             var db = new EcoparkDbContext();
-            var houses = db.House.ToList();
-            comboBox.DataSource = houses;
-            comboBox.SelectedItem = houses.FirstOrDefault(i => i.IDHouse == (int)agreement.HouseId);
+            Houses = db.House.ToList();
+            comboBox.DataSource = Houses;
+            comboBox.SelectedItem = Houses.FirstOrDefault(i => i.IDHouse == (int)agreement.HouseId);
             dateTimePickerFinish.Value = agreement.Start;
             dateTimePickerFinish.Value = agreement.Finish;
         }
@@ -71,6 +68,11 @@ namespace CourseProject.Forms.EmployeeForms
                 comboBox.Focus();
                 errorProvider.SetError(comboBox, errorMessage);
             }
+        }
+
+        private void comboBox_TextChanged(object sender, EventArgs e)
+        {
+            comboBox.DataSource = Houses.Where(i => i.ToString().ToLower().Contains(comboBox.Text.ToLower())).ToList();
         }
     }
 }

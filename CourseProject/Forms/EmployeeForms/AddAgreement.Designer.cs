@@ -104,6 +104,7 @@
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(484, 24);
             this.comboBox.TabIndex = 9;
+            this.comboBox.TextChanged += new System.EventHandler(this.comboBox_TextChanged);
             this.comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox_Validating);
             // 
             // label1
