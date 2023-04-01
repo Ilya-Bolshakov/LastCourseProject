@@ -15,10 +15,18 @@ namespace CourseProject
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            FormsApplicationContext context = new FormsApplicationContext();
-            AppProperties.Run(context);
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                FormsApplicationContext context = new FormsApplicationContext();
+                AppProperties.Run(context);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("В ходе приложения возникла неизвестная ошибка");
+            }
+            
         }
     }
 }

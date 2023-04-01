@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseProject.Forms.UserControls.Employee
+namespace CourseProject.Forms.UserControls.User
 {
     public partial class DetailUser : UserControl
     {

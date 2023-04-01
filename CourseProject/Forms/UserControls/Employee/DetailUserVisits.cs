@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseProject.Forms.UserControls.Employee
+namespace CourseProject.Forms.UserControls.User
 {
     public partial class DetailUserVisits : UserControl
     {

@@ -109,6 +109,12 @@
     <Compile Include="Forms\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForms\AddAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForms\AddAgreement.Designer.cs">
+      <DependentUpon>AddAgreement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForms\AddServiceToVisit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,12 @@
     <Compile Include="Forms\UserControls\Employee\DetailUserVisits.Designer.cs">
       <DependentUpon>DetailUserVisits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControls\Employee\EmployeeProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\Employee\EmployeeProfile.Designer.cs">
+      <DependentUpon>EmployeeProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControls\Employee\User.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +192,12 @@
     </Compile>
     <Compile Include="Forms\UserControls\Employee\UserAgreement.Designer.cs">
       <DependentUpon>UserAgreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserControls\User\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\User\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
@@ -211,6 +229,9 @@
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForms\AddAgreement.resx">
+      <DependentUpon>AddAgreement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForms\AddServiceToVisit.resx">
       <DependentUpon>AddServiceToVisit.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,11 +262,20 @@
     <EmbeddedResource Include="Forms\UserControls\Employee\DetailUserVisits.resx">
       <DependentUpon>DetailUserVisits.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\Employee\EmployeeProfile.resx">
+      <DependentUpon>EmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Employee\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\Employee\UserAgreement.resx">
       <DependentUpon>UserAgreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\User\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

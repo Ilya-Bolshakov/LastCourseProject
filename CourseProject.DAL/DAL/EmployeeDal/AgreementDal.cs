@@ -18,5 +18,18 @@ namespace CourseProject.DAL.DAL.EmployeeDal
         {
             return _context.Agreement.AsEnumerable();
         }
+
+        public async Task AddAgreement(Agreement agreement)
+        {
+            _context.Agreement.Add(agreement);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Agreement> UpdateAgreement(Agreement agreement)
+        {
+            _context.Entry(agreement).State = System.Data.Entity.EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return agreement;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using CourseProject.DAL;
 using CourseProject.DTO;
 using CourseProject.Forms.Base;
-using CourseProject.Forms.UserControls.Employee;
+using CourseProject.Forms.UserControls.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +45,24 @@ namespace CourseProject.Forms
             user.Width = this.Width;
             user.Height = this.Height;
             SetNewMainControl(user);
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            EmployeeProfile user = new EmployeeProfile(Employee);
+            user.Width = this.Width;
+            user.Height = this.Height;
+            SetNewMainControl(user);
+        }
+
+        private void flowLayoutPanelNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanelMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

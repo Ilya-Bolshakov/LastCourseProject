@@ -34,5 +34,10 @@ namespace CourseProject.DAL
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<House> House { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Category}. Площадь: {Area}, Комнаты: {4}, Кровати: {BedCount}, Цена: {Price}";
+        }
     }
 }

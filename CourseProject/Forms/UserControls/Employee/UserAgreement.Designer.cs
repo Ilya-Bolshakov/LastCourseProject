@@ -1,4 +1,4 @@
-﻿namespace CourseProject.Forms.UserControls.Employee
+﻿namespace CourseProject.Forms.UserControls.User
 {
     partial class UserAgreement
     {

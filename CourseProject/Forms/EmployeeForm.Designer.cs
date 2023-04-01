@@ -41,11 +41,12 @@
             this.flowLayoutPanelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelMain.Location = new System.Drawing.Point(229, 2);
-            this.flowLayoutPanelMain.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanelMain.Location = new System.Drawing.Point(305, 2);
+            this.flowLayoutPanelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
-            this.flowLayoutPanelMain.Size = new System.Drawing.Size(671, 485);
+            this.flowLayoutPanelMain.Size = new System.Drawing.Size(895, 597);
             this.flowLayoutPanelMain.TabIndex = 3;
+            this.flowLayoutPanelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelMain_Paint);
             // 
             // flowLayoutPanelNav
             // 
@@ -58,26 +59,29 @@
             this.flowLayoutPanelNav.Controls.Add(this.buttonAggreement);
             this.flowLayoutPanelNav.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelNav.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelNav.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanelNav.Name = "flowLayoutPanelNav";
-            this.flowLayoutPanelNav.Size = new System.Drawing.Size(225, 487);
+            this.flowLayoutPanelNav.Size = new System.Drawing.Size(300, 599);
             this.flowLayoutPanelNav.TabIndex = 2;
+            this.flowLayoutPanelNav.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNav_Paint);
             // 
             // buttonProfile
             // 
-            this.buttonProfile.Location = new System.Drawing.Point(2, 2);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonProfile.Location = new System.Drawing.Point(3, 2);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(223, 64);
+            this.buttonProfile.Size = new System.Drawing.Size(297, 79);
             this.buttonProfile.TabIndex = 0;
             this.buttonProfile.Text = "Профиль";
             this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // buttonUsers
             // 
-            this.buttonUsers.Location = new System.Drawing.Point(2, 70);
-            this.buttonUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUsers.Location = new System.Drawing.Point(3, 85);
+            this.buttonUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(223, 50);
+            this.buttonUsers.Size = new System.Drawing.Size(297, 62);
             this.buttonUsers.TabIndex = 1;
             this.buttonUsers.Text = "Клиенты";
             this.buttonUsers.UseVisualStyleBackColor = true;
@@ -85,10 +89,10 @@
             // 
             // buttonAggreement
             // 
-            this.buttonAggreement.Location = new System.Drawing.Point(2, 124);
-            this.buttonAggreement.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAggreement.Location = new System.Drawing.Point(3, 151);
+            this.buttonAggreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAggreement.Name = "buttonAggreement";
-            this.buttonAggreement.Size = new System.Drawing.Size(223, 74);
+            this.buttonAggreement.Size = new System.Drawing.Size(297, 91);
             this.buttonAggreement.TabIndex = 2;
             this.buttonAggreement.Text = "Бронирование";
             this.buttonAggreement.UseVisualStyleBackColor = true;
@@ -96,11 +100,12 @@
             // 
             // EmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 495);
+            this.ClientSize = new System.Drawing.Size(1203, 609);
             this.Controls.Add(this.flowLayoutPanelMain);
             this.Controls.Add(this.flowLayoutPanelNav);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
             this.flowLayoutPanelNav.ResumeLayout(false);
