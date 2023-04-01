@@ -1,6 +1,7 @@
 ﻿using CourseProject.DAL;
 using CourseProject.DAL.DAL.Admin;
 using CourseProject.DTO;
+using CourseProject.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,86 @@ namespace CourseProject.Forms.Admin
             Shift.ShiftDate = dateTimePicker1.Value;
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void comboBoxAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxAdmin.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBoxAdmin, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBoxAdmin.Focus();
+                errorProvider.SetError(comboBoxAdmin, errorMessage);
+            }
+        }
+
+        private void comboBoxEmployee_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxEmployee.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBoxEmployee, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBoxEmployee.Focus();
+                errorProvider.SetError(comboBoxEmployee, errorMessage);
+            }
+        }
+
+        private void comboBoxFirstC_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxFirstC.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBoxFirstC, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBoxFirstC.Focus();
+                errorProvider.SetError(comboBoxFirstC, errorMessage);
+            }
+        }
+
+        private void comboBoxSecondC_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxSecondC.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBoxSecondC, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBoxSecondC.Focus();
+                errorProvider.SetError(comboBoxSecondC, errorMessage);
+            }
+        }
+
+        private void comboBoxThirdC_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxThirdC.SelectedItem, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(comboBoxThirdC, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                comboBoxThirdC.Focus();
+                errorProvider.SetError(comboBoxThirdC, errorMessage);
+            }
         }
     }
 }

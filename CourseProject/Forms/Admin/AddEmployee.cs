@@ -56,6 +56,7 @@ namespace CourseProject.Forms.Admin
             comboBoxwork.DisplayMember = "Work1";
             comboBoxwork.SelectedItem = new WorkDal(db).GetWorks().FirstOrDefault(w => w.Id == Employee.Id);
             db.Dispose();
+            radioButtonMale.Checked = true;
         }
 
         private async void buttonRegister_Click(object sender, EventArgs e)
@@ -134,6 +135,139 @@ namespace CourseProject.Forms.Admin
                     MessageBox.Show(ex.Message, "Ошибка");
                 }
             }
+        }
+
+        private void textBoxName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxName.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxName, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxName, errorMessage);
+            }
+        }
+
+        private void textBoxSurname_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxSurname.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxSurname, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxSurname, errorMessage);
+            }
+        }
+
+        private void textBoxPatronymic_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateSimpleText(textBoxPatronymic.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPatronymic, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxPatronymic, errorMessage);
+            }
+        }
+
+        private void textBoxPassport_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePassport(textBoxPassport.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPassport, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxPassport, errorMessage);
+            }
+        }
+
+        private void textBoxPhone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePhone(textBoxPhone.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPhone, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxPhone, errorMessage);
+            }
+        }
+
+        private void textBoxAddress_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateAddress(textBoxAddress.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxAddress, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxAddress.Focus();
+                errorProvider.SetError(textBoxAddress, errorMessage);
+            }
+        }
+
+        private void textBoxLogin_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidateLogin(textBoxLogin.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxLogin, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxLogin, errorMessage);
+            }
+        }
+
+        private void textBoxPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (ValidateHelper.ValidatePassword(textBoxPassword.Text, ref errorMessage))
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPassword, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider.SetError(textBoxPassword, errorMessage);
+            }
+        }
+
+        private void comboBoxwork_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }

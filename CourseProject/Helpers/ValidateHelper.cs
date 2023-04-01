@@ -34,6 +34,22 @@ namespace CourseProject.Helpers
             return true;
         }
 
+        public static bool ValidateAddress(string text, ref string errorMessage)
+        {
+            var regex = new Regex(@"^[a-zA-Zа-яА-Я //\\.,:\d]+$");
+            if (String.IsNullOrEmpty(text))
+            {
+                errorMessage = "Адрес должен быть заполнен";
+                return false;
+            }
+            if (!regex.IsMatch(text))
+            {
+                errorMessage = "";
+                return false;
+            }
+            return true;
+        }
+
         public static bool ValidatePrice(string text, ref string errorMessage)
         {
             if (decimal.TryParse(text, out var price))
