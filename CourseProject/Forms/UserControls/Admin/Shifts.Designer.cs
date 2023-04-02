@@ -67,6 +67,7 @@
             this.listBoxShifts.ScrollAlwaysVisible = true;
             this.listBoxShifts.Size = new System.Drawing.Size(349, 303);
             this.listBoxShifts.TabIndex = 6;
+            this.listBoxShifts.SelectedValueChanged += new System.EventHandler(this.listBoxShifts_SelectedValueChanged);
             // 
             // buttonEdit
             // 

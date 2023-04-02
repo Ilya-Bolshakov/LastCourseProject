@@ -59,20 +59,23 @@ namespace CourseProject.Forms.Admin
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            Shift.Admin = (EmployeeDto)comboBoxAdmin.SelectedItem;
-            Shift.Employee = (EmployeeDto)comboBoxEmployee.SelectedItem;
-            Shift.FirstCleaner = (EmployeeDto)comboBoxFirstC.SelectedItem;
-            Shift.SecondCleaner = (EmployeeDto)comboBoxSecondC.SelectedItem;
-            Shift.ThirdCleaner = (EmployeeDto)comboBoxThirdC.SelectedItem;
-            Shift.ShiftDate = dateTimePicker1.Value;
-            DialogResult = DialogResult.OK;
-            Close();
+            if (ValidateChildren())
+            {
+                Shift.Admin = (EmployeeDto)comboBoxAdmin.SelectedItem;
+                Shift.Employee = (EmployeeDto)comboBoxEmployee.SelectedItem;
+                Shift.FirstCleaner = (EmployeeDto)comboBoxFirstC.SelectedItem;
+                Shift.SecondCleaner = (EmployeeDto)comboBoxSecondC.SelectedItem;
+                Shift.ThirdCleaner = (EmployeeDto)comboBoxThirdC.SelectedItem;
+                Shift.ShiftDate = dateTimePicker1.Value;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void comboBoxAdmin_Validating(object sender, CancelEventArgs e)
         {
             string errorMessage = String.Empty;
-            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxAdmin.SelectedItem, ref errorMessage))
+            if (ValidateHelper.ValidateSelectedItem<EmployeeDto>(comboBoxAdmin.SelectedItem, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(comboBoxAdmin, null);
@@ -88,7 +91,7 @@ namespace CourseProject.Forms.Admin
         private void comboBoxEmployee_Validating(object sender, CancelEventArgs e)
         {
             string errorMessage = String.Empty;
-            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxEmployee.SelectedItem, ref errorMessage))
+            if (ValidateHelper.ValidateSelectedItem<EmployeeDto>(comboBoxEmployee.SelectedItem, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(comboBoxEmployee, null);
@@ -104,7 +107,7 @@ namespace CourseProject.Forms.Admin
         private void comboBoxFirstC_Validating(object sender, CancelEventArgs e)
         {
             string errorMessage = String.Empty;
-            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxFirstC.SelectedItem, ref errorMessage))
+            if (ValidateHelper.ValidateSelectedItem<EmployeeDto>(comboBoxFirstC.SelectedItem, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(comboBoxFirstC, null);
@@ -120,7 +123,7 @@ namespace CourseProject.Forms.Admin
         private void comboBoxSecondC_Validating(object sender, CancelEventArgs e)
         {
             string errorMessage = String.Empty;
-            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxSecondC.SelectedItem, ref errorMessage))
+            if (ValidateHelper.ValidateSelectedItem<EmployeeDto>(comboBoxSecondC.SelectedItem, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(comboBoxSecondC, null);
@@ -136,7 +139,7 @@ namespace CourseProject.Forms.Admin
         private void comboBoxThirdC_Validating(object sender, CancelEventArgs e)
         {
             string errorMessage = String.Empty;
-            if (ValidateHelper.ValidateSelectedItem<House>(comboBoxThirdC.SelectedItem, ref errorMessage))
+            if (ValidateHelper.ValidateSelectedItem<EmployeeDto>(comboBoxThirdC.SelectedItem, ref errorMessage))
             {
                 e.Cancel = false;
                 errorProvider.SetError(comboBoxThirdC, null);

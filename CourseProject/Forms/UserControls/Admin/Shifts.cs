@@ -24,7 +24,8 @@ namespace CourseProject.Forms.UserControls.Admin
         }
 
         private async void Shifts_Load(object sender, EventArgs e)
-        {         
+        {
+            buttonEdit.Enabled = false;
             var task = Task.Run(() =>
             {
                 var db = new EcoparkDbContext();
@@ -37,7 +38,6 @@ namespace CourseProject.Forms.UserControls.Admin
             await task;
             listBoxShifts.DataSource = CurShifts;
             dateTimePicker.Enabled = true;
-            buttonEdit.Enabled = true;
         }
 
 
@@ -77,6 +77,11 @@ namespace CourseProject.Forms.UserControls.Admin
         {
             CurShifts = new BindingList<ShiftDto>(AllShifts.Where(u => u.ShiftDate.ToShortDateString() == dateTime.ToShortDateString()).ToList());
             listBoxShifts.DataSource = CurShifts;
+        }
+
+        private void listBoxShifts_SelectedValueChanged(object sender, EventArgs e)
+        {
+            buttonEdit.Enabled = listBoxShifts.SelectedItem != null;
         }
     }
 }

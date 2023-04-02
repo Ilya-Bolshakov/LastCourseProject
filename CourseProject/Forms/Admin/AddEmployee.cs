@@ -61,78 +61,81 @@ namespace CourseProject.Forms.Admin
 
         private async void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (Employee.Id == 0)
+            if (ValidateChildren())
             {
-                var newUser = new Users();
-                newUser.FirstName = textBoxName.Text;
-                newUser.LastName = textBoxSurname.Text;
-                newUser.Patronymic = textBoxPatronymic.Text;
-                newUser.Passport = textBoxPassport.Text;
-                newUser.DateOfBirth = dateTimePickerDateOfBirth.Value;
-                newUser.Phone = textBoxPhone.Text;
-
-                var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-
-                GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
-
-                newUser.Gender = (int)d;
-                newUser.userLogin = textBoxLogin.Text;
-
-                try
+                if (Employee.Id == 0)
                 {
+                    var newUser = new Users();
+                    newUser.FirstName = textBoxName.Text;
+                    newUser.LastName = textBoxSurname.Text;
+                    newUser.Patronymic = textBoxPatronymic.Text;
+                    newUser.Passport = textBoxPassport.Text;
+                    newUser.DateOfBirth = dateTimePickerDateOfBirth.Value;
+                    newUser.Phone = textBoxPhone.Text;
+
+                    var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+                    GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
+
+                    newUser.Gender = (int)d;
+                    newUser.userLogin = textBoxLogin.Text;
+
+                    try
+                    {
+                        var selectedWork = (Work)comboBoxwork.SelectedItem;
+                        Employee.WorkId = selectedWork.Id;
+                        Employee.Employment = dateTimePickerEmplument.Value;
+                        Employee.Address = textBoxAddress.Text;
+                        newUser.UserRole = selectedWork.Id;
+
+                        await AccountHelper.RegisterEmployee(newUser, textBoxPassword.Text, Employee);
+
+                        this.DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка");
+                    }
+                }
+                else
+                {
+                    var db = new EcoparkDbContext();
+
+                    var editE = new AdminDal(db).GetEmployee(Employee.Id);
+                    var editU = db.Users.FirstOrDefault(u => u.Id == Employee.Id);
+
+                    editE.EmploymentDate = dateTimePickerEmplument.Value;
+                    editE.ResidentialAddress = textBoxAddress.Text;
                     var selectedWork = (Work)comboBoxwork.SelectedItem;
                     Employee.WorkId = selectedWork.Id;
-                    Employee.Employment = dateTimePickerEmplument.Value;
-                    Employee.Address = textBoxAddress.Text;
-                    newUser.UserRole = selectedWork.Id;
+                    editE.Work = Employee.Id;
+                    editU.UserRole = Employee.Id;
 
-                    await AccountHelper.RegisterEmployee(newUser, textBoxPassword.Text, Employee);
+                    editU.FirstName = textBoxName.Text;
+                    editU.LastName = textBoxSurname.Text;
+                    editU.Passport = textBoxPassport.Text;
+                    editU.Patronymic = textBoxPatronymic.Text;
+                    editU.DateOfBirth = dateTimePickerDateOfBirth.Value;
+                    editU.Phone = textBoxPhone.Text;
+                    var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
-                    this.DialogResult = DialogResult.OK;
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка");
-                }
-            }
-            else
-            {
-                var db = new EcoparkDbContext();
+                    GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
 
-                var editE = new AdminDal(db).GetEmployee(Employee.Id);
-                var editU = db.Users.FirstOrDefault(u => u.Id == Employee.Id);
-
-                editE.EmploymentDate = dateTimePickerEmplument.Value;
-                editE.ResidentialAddress = textBoxAddress.Text;
-                var selectedWork = (Work)comboBoxwork.SelectedItem;
-                Employee.WorkId = selectedWork.Id;
-                editE.Work = Employee.Id;
-                editU.UserRole = Employee.Id;
-
-                editU.FirstName = textBoxName.Text;
-                editU.LastName = textBoxSurname.Text;
-                editU.Passport = textBoxPassport.Text;
-                editU.Patronymic = textBoxPatronymic.Text;
-                editU.DateOfBirth = dateTimePickerDateOfBirth.Value;
-                editU.Phone = textBoxPhone.Text;
-                var enableRadio = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-
-                GenderEnum d = (GenderEnum)Enum.Parse(typeof(GenderEnum), enableRadio.Text);
-
-                editU.Gender = (int)d;
+                    editU.Gender = (int)d;
 
 
-                try
-                {
-                    await db.SaveChangesAsync();
+                    try
+                    {
+                        await db.SaveChangesAsync();
 
-                    this.DialogResult = DialogResult.OK;
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка");
+                        this.DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка");
+                    }
                 }
             }
         }
