@@ -6,13 +6,6 @@ namespace CourseProject.DTO
 {
     public class ServiceListDto
     {
-        [DisplayName("Номер услуги")]
-        public int ServiceId { get; set; }
-        public ServiceDto Service { get; set; }
-        public int VisitId { get; set; }
-        [DisplayName("Количество")]
-        public int Count { get; set; }
-
         [DisplayName("Название")]
         public string Name
         {
@@ -21,6 +14,13 @@ namespace CourseProject.DTO
                 return Service.Name;
             }
         }
+        [DisplayName("Номер услуги")]
+        public int ServiceId { get; set; }
+        public ServiceDto Service { get; set; }
+        public int VisitId { get; set; }
+        [DisplayName("Количество")]
+        public int Count { get; set; }
+
 
         public ServiceListDto(ServiceList serviceList)
         {

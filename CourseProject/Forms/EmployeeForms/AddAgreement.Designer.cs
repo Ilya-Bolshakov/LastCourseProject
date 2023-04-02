@@ -43,9 +43,10 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(557, 364);
+            this.buttonSave.Location = new System.Drawing.Point(418, 296);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(120, 52);
+            this.buttonSave.Size = new System.Drawing.Size(90, 42);
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -54,65 +55,65 @@
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Location = new System.Drawing.Point(190, 287);
-            this.labelFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFinish.Location = new System.Drawing.Point(142, 233);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(25, 16);
+            this.labelFinish.Size = new System.Drawing.Size(21, 13);
             this.labelFinish.TabIndex = 7;
             this.labelFinish.Text = "По";
             // 
             // labelStart
             // 
             this.labelStart.AutoSize = true;
-            this.labelStart.Location = new System.Drawing.Point(190, 222);
-            this.labelStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStart.Location = new System.Drawing.Point(142, 180);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(16, 16);
+            this.labelStart.Size = new System.Drawing.Size(14, 13);
             this.labelStart.TabIndex = 6;
             this.labelStart.Text = "С";
             // 
             // dateTimePickerFinish
             // 
-            this.dateTimePickerFinish.Location = new System.Drawing.Point(233, 281);
-            this.dateTimePickerFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerFinish.Location = new System.Drawing.Point(175, 228);
             this.dateTimePickerFinish.Name = "dateTimePickerFinish";
-            this.dateTimePickerFinish.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePickerFinish.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFinish.TabIndex = 5;
             // 
             // dateTimePickerStart
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(233, 223);
-            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(175, 181);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerStart.TabIndex = 4;
             this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // labelText
             // 
             this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(190, 176);
+            this.labelText.Location = new System.Drawing.Point(142, 143);
+            this.labelText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(146, 16);
+            this.labelText.Size = new System.Drawing.Size(115, 13);
             this.labelText.TabIndex = 8;
             this.labelText.Text = "Время бронирования";
             // 
             // comboBox
             // 
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(193, 85);
+            this.comboBox.Location = new System.Drawing.Point(145, 69);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(484, 24);
+            this.comboBox.Size = new System.Drawing.Size(364, 21);
             this.comboBox.TabIndex = 9;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             this.comboBox.TextChanged += new System.EventHandler(this.comboBox_TextChanged);
             this.comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 34);
+            this.label1.Location = new System.Drawing.Point(145, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 16);
+            this.label1.Size = new System.Drawing.Size(160, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Выбор объекта бронирования";
             // 
@@ -122,10 +123,10 @@
             // 
             // AddAgreement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.labelText);
@@ -134,6 +135,7 @@
             this.Controls.Add(this.dateTimePickerFinish);
             this.Controls.Add(this.dateTimePickerStart);
             this.Controls.Add(this.buttonSave);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddAgreement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый договор";

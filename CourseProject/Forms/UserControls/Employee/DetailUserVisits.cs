@@ -32,6 +32,7 @@ namespace CourseProject.Forms.UserControls.User
             dataGridView.DataSource = BindingList;
             dataGridView.Columns["VisitId"].Visible = false;
             dataGridView.Columns["Service"].Visible = false;
+            dataGridView.Columns["ServiceId"].Visible = false;
         }
 
         private async void buttonAddService_Click(object sender, EventArgs e)

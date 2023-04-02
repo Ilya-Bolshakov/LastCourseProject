@@ -1,4 +1,5 @@
 ﻿using CourseProject.DAL;
+using CourseProject.DAL.DAL.EmployeeDal;
 using CourseProject.DTO;
 using CourseProject.Helpers;
 using System;
@@ -31,8 +32,8 @@ namespace CourseProject.Forms.EmployeeForms
             Houses = db.House.ToList();
             comboBox.DataSource = Houses;
             comboBox.SelectedItem = Houses.FirstOrDefault(i => i.IDHouse == (int)agreement.HouseId);
-            dateTimePickerFinish.Value = agreement.Start;
-            dateTimePickerFinish.Value = agreement.Finish;
+            //dateTimePickerFinish.Value = agreement.Start;
+            //dateTimePickerFinish.Value = agreement.Finish;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -72,7 +73,34 @@ namespace CourseProject.Forms.EmployeeForms
 
         private void comboBox_TextChanged(object sender, EventArgs e)
         {
-            comboBox.DataSource = Houses.Where(i => i.ToString().ToLower().Contains(comboBox.Text.ToLower())).ToList();
+            //comboBox.DataSource = Houses.Where(i => i.ToString().ToLower().Contains(comboBox.Text.ToLower())).ToList();
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var db = new EcoparkDbContext();
+            var selectedHouse = (House)comboBox.SelectedItem;
+
+            var q = from a in db.Agreement
+                    where a.House.Select(i => i.IDHouse).Contains(selectedHouse.IDHouse)
+                    orderby a.IDAgreement
+                    select a;
+
+            var lastAgreement = q.FirstOrDefault();
+
+            if (lastAgreement != null)
+            {
+                dateTimePickerStart.MinDate = lastAgreement.AgreementDateEnd;
+                dateTimePickerFinish.Value = dateTimePickerStart.Value.AddDays(1);
+            }
+            else
+            {
+                dateTimePickerStart.MinDate = DateTime.Now;
+                dateTimePickerStart.Value = DateTime.Now;
+                dateTimePickerFinish.Value = dateTimePickerStart.Value.AddDays(1);
+            }
+
+            
         }
     }
 }
