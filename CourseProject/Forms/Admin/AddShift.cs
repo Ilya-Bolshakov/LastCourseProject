@@ -26,7 +26,6 @@ namespace CourseProject.Forms.Admin
         {
             InitializeComponent();
             Shift = shiftdto;
-            dateTimePicker1.Visible = false;
         }
 
         private void AddShift_Load(object sender, EventArgs e)

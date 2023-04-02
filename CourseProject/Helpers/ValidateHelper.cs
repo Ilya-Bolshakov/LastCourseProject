@@ -50,6 +50,27 @@ namespace CourseProject.Helpers
             return true;
         }
 
+        public static bool ValidateNumber(string text, ref string errorMessage)
+        {
+            if (int.TryParse(text, out int number))
+            {
+                if (number > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    errorMessage = "Поле должно быть положительным числом";
+                    return false;
+                }
+            }
+            else
+            {
+                errorMessage = "Поле должно быть положительным числом";
+                return false;
+            }
+        }
+
         public static bool ValidatePrice(string text, ref string errorMessage)
         {
             if (decimal.TryParse(text, out var price))

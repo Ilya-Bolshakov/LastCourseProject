@@ -127,6 +127,12 @@
     <Compile Include="Forms\EmployeeForms\AddVisit.Designer.cs">
       <DependentUpon>AddVisit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForms\DeleteService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForms\DeleteService.Designer.cs">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForms\AddVisit.resx">
       <DependentUpon>AddVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForms\DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

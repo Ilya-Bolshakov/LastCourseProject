@@ -31,5 +31,12 @@ namespace CourseProject.DAL.DAL.EmployeeDal
         {
             return _context.ServiceList.FirstOrDefault(i => i.IDVisit == visitId && i.IDService == serviceId);
         }
+
+        public async Task Remove(ServiceList service)
+        { 
+            _context.Entry(service).State = System.Data.Entity.EntityState.Deleted;
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

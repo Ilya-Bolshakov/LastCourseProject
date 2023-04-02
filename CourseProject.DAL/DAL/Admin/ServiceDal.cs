@@ -19,6 +19,11 @@ namespace CourseProject.DAL.DAL.Admin
             return _context.Service.AsEnumerable();
         }
 
+        public Service GetService(int id)
+        {
+            return _context.Service.FirstOrDefault(i => i.IDService == id);
+        }
+
         public async Task AddServiceAsync(Service service)
         {
             _context.Service.Add(service);
