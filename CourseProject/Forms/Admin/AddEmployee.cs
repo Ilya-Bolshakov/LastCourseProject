@@ -28,6 +28,8 @@ namespace CourseProject.Forms.Admin
             Employee = dto;
             textBoxLogin.Visible = false;
             textBoxPassword.Visible = false;
+            labelPassword.Visible = false;
+            labelLogin.Visible = false;
             buttonRegister.Text = "Редактировать";
             BindingData();
         }

@@ -66,7 +66,7 @@ namespace CourseProject.Forms.UserControls.User
         private void Agreements_Load(object sender, EventArgs e)
         {
             textBoxFilterName.Enabled = false;
-            Binding = new BindingList<AgreementDto>(User.Agreements.ToList());
+            Binding = new BindingList<AgreementDto>(User.Agreements.Where(a => a.HouseId != null).ToList());
             listBoxAgreements.DataSource = Binding;
             textBoxFilterName.Enabled = true;    
         }
