@@ -49,6 +49,7 @@ namespace CourseProject.Forms
             DetailUser user = new DetailUser(User, null, DisplayVisit);
             user.buttonEdit.Visible = false;
             user.buttonAddVisit.Visible = false;
+            user.buttonDeleteVisit.Visible = false;
             user.Width = this.Width;
             user.Height = this.Height;
             SetNewMainControl(user);

@@ -37,15 +37,16 @@
             this.dateTimePickerFinish = new System.Windows.Forms.DateTimePicker();
             this.labelStart = new System.Windows.Forms.Label();
             this.labelFinish = new System.Windows.Forms.Label();
+            this.buttonDeleteVisit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelUser.Location = new System.Drawing.Point(12, 15);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(60, 24);
+            this.labelUser.Size = new System.Drawing.Size(51, 20);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "label1";
             // 
@@ -122,10 +123,21 @@
             this.labelFinish.TabIndex = 15;
             this.labelFinish.Text = "По";
             // 
+            // buttonDeleteVisit
+            // 
+            this.buttonDeleteVisit.Location = new System.Drawing.Point(156, 366);
+            this.buttonDeleteVisit.Name = "buttonDeleteVisit";
+            this.buttonDeleteVisit.Size = new System.Drawing.Size(122, 51);
+            this.buttonDeleteVisit.TabIndex = 16;
+            this.buttonDeleteVisit.Text = "Удалить посещение";
+            this.buttonDeleteVisit.UseVisualStyleBackColor = true;
+            this.buttonDeleteVisit.Click += new System.EventHandler(this.buttonDeleteVisit_Click);
+            // 
             // DetailUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDeleteVisit);
             this.Controls.Add(this.labelFinish);
             this.Controls.Add(this.labelStart);
             this.Controls.Add(this.dateTimePickerFinish);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Label labelFinish;
         public System.Windows.Forms.Button buttonAddVisit;
         public System.Windows.Forms.Button buttonEdit;
+        public System.Windows.Forms.Button buttonDeleteVisit;
     }
 }

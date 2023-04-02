@@ -133,5 +133,34 @@ namespace CourseProject.Forms.UserControls.User
                 _showVisits((VisitDto)listBoxVisits.SelectedItem);
             }
         }
+
+        private async void buttonDeleteVisit_Click(object sender, EventArgs e)
+        {
+            if (listBoxVisits.SelectedItem != null)
+            {
+                var visit = (VisitDto)listBoxVisits.SelectedItem;
+                if (visit.Services.Any())
+                {
+                    MessageBox.Show("Посещение нельзя удалить. На нем имеются услуги!", "Ошибка");
+                }
+                else
+                {
+                    var dlg = MessageBox.Show("Действительно удалить это посещение?", "Внимание", MessageBoxButtons.OKCancel);
+                    if (dlg == DialogResult.OK)
+                    {
+                        var db = new EcoparkDbContext();
+                        var dal = new VisitDal(db);
+                        await dal.Remove(visit.MapToOrm());
+
+                        DetailUser_Load(sender, e);
+                        Filter();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите Посещение для удаления", "Внимание!");
+            }
+        }
     }
 }

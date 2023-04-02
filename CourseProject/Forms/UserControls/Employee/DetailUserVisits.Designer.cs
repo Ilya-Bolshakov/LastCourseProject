@@ -60,10 +60,10 @@
             // labelVisit
             // 
             this.labelVisit.AutoSize = true;
-            this.labelVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelVisit.Location = new System.Drawing.Point(12, 10);
             this.labelVisit.Name = "labelVisit";
-            this.labelVisit.Size = new System.Drawing.Size(60, 24);
+            this.labelVisit.Size = new System.Drawing.Size(51, 20);
             this.labelVisit.TabIndex = 16;
             this.labelVisit.Text = "label1";
             // 

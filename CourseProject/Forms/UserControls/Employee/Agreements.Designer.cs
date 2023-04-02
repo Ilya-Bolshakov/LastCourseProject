@@ -58,10 +58,10 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelUser.Location = new System.Drawing.Point(18, 20);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(60, 24);
+            this.labelUser.Size = new System.Drawing.Size(51, 20);
             this.labelUser.TabIndex = 12;
             this.labelUser.Text = "label1";
             // 

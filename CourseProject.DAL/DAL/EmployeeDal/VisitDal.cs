@@ -35,5 +35,11 @@ namespace CourseProject.DAL.DAL.EmployeeDal
             _context.Entry(visit).State = System.Data.Entity.EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+
+        public async Task Remove(Visit visit)
+        {
+            _context.Entry(visit).State = System.Data.Entity.EntityState.Deleted;
+            await _context.SaveChangesAsync();
+        }
     }
 }
