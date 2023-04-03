@@ -51,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9CC2A868416945DCBAA789F5EAA7C735"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C720A79DD1C5896F652753345B063FB9"
         "OwnerKey" = "8:_74C6AAEB58F04297A7C2F14896457F65"
         "MsmSig" = "8:_UNDEFINED"
@@ -59,12 +65,6 @@
         {
         "MsmKey" = "8:_C81D570AFBCF947BBA9AAC5CFD286E13"
         "OwnerKey" = "8:_74C6AAEB58F04297A7C2F14896457F65"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C81D570AFBCF947BBA9AAC5CFD286E13"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -89,6 +89,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7837F6EB9A839DDDFE991897C82BCEC8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C81D570AFBCF947BBA9AAC5CFD286E13"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -146,6 +152,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -241,6 +255,26 @@
             {
             "SourcePath" = "8:D:\\ownloads\\button_power_off_icon_251427.ico"
             "TargetName" = "8:button_power_off_icon_251427.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_34A4C2D44A984753ACE790257A5CCB50"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9CC2A868416945DCBAA789F5EAA7C735"
+            {
+            "SourcePath" = "8:..\\CourseProject\\bin\\Debug\\biznes-it-tehnologii-internet.jpg"
+            "TargetName" = "8:biznes-it-tehnologii-internet.jpg"
             "Tag" = "8:"
             "Folder" = "8:_34A4C2D44A984753ACE790257A5CCB50"
             "Condition" = "8:"
@@ -376,7 +410,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{F8947DC8-A820-4AFF-94E5-549D96FB3ADD}"
-        "PackageCode" = "8:{82375B20-E173-4D78-B670-5C1A73CA89AE}"
+        "PackageCode" = "8:{B15BD43C-4E76-4344-AF68-C9475D08D2C4}"
         "UpgradeCode" = "8:{4414280E-ED69-4025-A4ED-021F48DE6011}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -925,7 +959,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_74C6AAEB58F04297A7C2F14896457F65"
             {
-            "SourcePath" = "8:..\\CourseProject\\obj\\Debug\\CourseProject.exe"
+            "SourcePath" = "8:..\\CourseProject\\obj\\Release\\CourseProject.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_34A4C2D44A984753ACE790257A5CCB50"
