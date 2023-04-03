@@ -176,7 +176,7 @@
             this.Controls.Add(this.labelAdmin);
             this.Name = "AddShift";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddShift";
+            this.Text = "Смена";
             this.Load += new System.EventHandler(this.AddShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

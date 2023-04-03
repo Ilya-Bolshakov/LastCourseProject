@@ -58,10 +58,12 @@
             // 
             // listBoxUsers
             // 
+            this.listBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBoxUsers.FormattingEnabled = true;
+            this.listBoxUsers.ItemHeight = 16;
             this.listBoxUsers.Location = new System.Drawing.Point(3, 118);
             this.listBoxUsers.Name = "listBoxUsers";
-            this.listBoxUsers.Size = new System.Drawing.Size(641, 251);
+            this.listBoxUsers.Size = new System.Drawing.Size(641, 244);
             this.listBoxUsers.TabIndex = 7;
             this.listBoxUsers.SelectedValueChanged += new System.EventHandler(this.listBoxUsers_SelectedValueChanged);
             this.listBoxUsers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxUsers_MouseDoubleClick);

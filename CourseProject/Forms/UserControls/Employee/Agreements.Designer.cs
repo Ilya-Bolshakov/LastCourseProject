@@ -48,10 +48,12 @@
             // 
             // listBoxAgreements
             // 
+            this.listBoxAgreements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBoxAgreements.FormattingEnabled = true;
+            this.listBoxAgreements.ItemHeight = 16;
             this.listBoxAgreements.Location = new System.Drawing.Point(0, 143);
             this.listBoxAgreements.Name = "listBoxAgreements";
-            this.listBoxAgreements.Size = new System.Drawing.Size(638, 199);
+            this.listBoxAgreements.Size = new System.Drawing.Size(638, 196);
             this.listBoxAgreements.TabIndex = 13;
             this.listBoxAgreements.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxAgreements_MouseDoubleClick);
             // 

@@ -58,7 +58,8 @@ namespace CourseProject.Forms.UserControls.User
 
         private void textBoxFilterName_TextChanged(object sender, EventArgs e)
         {
-            Binding = new BindingList<AgreementDto>(User.Agreements.Where(i => i.Id.ToString().Contains(textBoxFilterName.Text)).ToList());
+            var q = new BindingList<AgreementDto>(User.Agreements.Where(a => a.HouseId != null).ToList());
+            Binding = new BindingList<AgreementDto>(q.Where(i => i.Id.ToString().Contains(textBoxFilterName.Text)).ToList());
             listBoxAgreements.DataSource = Binding;
 
         }

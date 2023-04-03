@@ -37,6 +37,7 @@ namespace CourseProject.Forms.UserControls.Admin
             await task;
             dataGridView.DataSource = ServiceList;
             textBoxFilterName.Enabled = true;
+            dataGridView.Columns["Id"].Visible = false;
         }
 
         private async void buttonAdd_Click(object sender, EventArgs e)
@@ -55,15 +56,22 @@ namespace CourseProject.Forms.UserControls.Admin
 
         private async void buttonEdit_Click(object sender, EventArgs e)
         {
-            var form = new AddService((ServiceDto)dataGridView.CurrentRow.DataBoundItem);
-            if (form.ShowDialog() == DialogResult.OK)
+            if (dataGridView?.CurrentRow?.DataBoundItem != null && dataGridView?.CurrentRow?.DataBoundItem is ServiceDto)
             {
-                var db = new EcoparkDbContext();
-                var dal = new ServiceDal(db);
-                await dal.UpdateServiceAsync(form.Service.MapToOrm());
+                var form = new AddService((ServiceDto)dataGridView.CurrentRow.DataBoundItem);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    var db = new EcoparkDbContext();
+                    var dal = new ServiceDal(db);
+                    await dal.UpdateServiceAsync(form.Service.MapToOrm());
 
-                Services_Load(this, e);
-                textBoxFilterName_TextChanged(this, e);
+                    Services_Load(this, e);
+                    textBoxFilterName_TextChanged(this, e);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите услугу");
             }
         }
 

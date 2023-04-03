@@ -31,6 +31,7 @@ namespace CourseProject.Forms.Admin
             labelPassword.Visible = false;
             labelLogin.Visible = false;
             buttonRegister.Text = "Редактировать";
+            Text = "Редактирование сотрудника";
             BindingData();
         }
 

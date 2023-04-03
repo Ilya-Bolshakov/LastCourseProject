@@ -351,7 +351,7 @@
             this.Controls.Add(this.labelReg);
             this.Name = "AddEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEmployee";
+            this.Text = "Добавление сотрудника";
             this.Load += new System.EventHandler(this.AddEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
